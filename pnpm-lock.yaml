@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@headlessui/react': ^1.6.5
   '@heroicons/react': ^1.0.6
+  '@icons-pack/react-simple-icons': ^5.2.0
   '@next/bundle-analyzer': ^12.2.0
   '@tailwindcss/forms': ^0.5.2
   '@types/lodash': ^4.14.182
@@ -42,6 +43,7 @@ specifiers:
 dependencies:
   '@headlessui/react': 1.6.5_biqbaboplfbrettd7655fr4n2y
   '@heroicons/react': 1.0.6_react@18.2.0
+  '@icons-pack/react-simple-icons': 5.2.0_react@18.2.0
   '@types/smoothscroll-polyfill': 0.3.1
   caniuse-lite: 1.0.30001361
   firebase: 9.8.4
@@ -1997,6 +1999,14 @@ packages:
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
+
+  /@icons-pack/react-simple-icons/5.2.0_react@18.2.0:
+    resolution: {integrity: sha512-98jGZQu3u0opACGlrb2UmS2jODh8ahgdws6f4KLfLqBiWAZG2y+oLDfVxZXxbOF1taQap6OUw4Ao8u0EzJFHZA==}
+    peerDependencies:
+      react: ^16.13 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /@jest/create-cache-key-function/27.5.1:
     resolution: {integrity: sha512-dmH1yW+makpTSURTy8VzdUwFnfQh1G8R+DxO2Ho2FFmBbKFEVm+3jWdvFhE2VqB/LATCTokkP0dotjyQyw5/AQ==}

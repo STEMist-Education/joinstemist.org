@@ -90,7 +90,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    {social.icon}
+                    <social.icon color={social.color} height={24} width={24} />
                   </a>
                 </li>
               ))}

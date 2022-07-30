@@ -5,6 +5,7 @@
   "dependencies": {
     "@headlessui/react": "^1.6.5",
     "@heroicons/react": "^1.0.6",
+    "@icons-pack/react-simple-icons": "^5.2.0",
     "@types/smoothscroll-polyfill": "^0.3.1",
     "caniuse-lite": "^1.0.30001361",
     "firebase": "^9.8.4",
