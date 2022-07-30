@@ -1,7 +1,7 @@
 # STEMist Education - Official Website
 
-![STEMist Education Logo](https://raw.githubusercontent.com/SneK152/stemist-website/development/public/logo-dark.png#gh-light-mode-only)
-![STEMist Education Logo](https://raw.githubusercontent.com/SneK152/stemist-website/5b40bfee4979a0b7a48f77e0c4b2878ea0256916/public/logo-white.png#gh-dark-mode-only)
+![STEMist Education Logo](https://raw.githubusercontent.com/STEMist-Education/joinstemist.org/development/public/logo-dark.png#gh-light-mode-only)
+![STEMist Education Logo](https://raw.githubusercontent.com/STEMist-Education/joinstemist.org/5b40bfee4979a0b7a48f77e0c4b2878ea0256916/public/logo-white.png#gh-dark-mode-only)
 
 Welcome to the official repository for [STEMist Education](https://joinstemist.org)
 
