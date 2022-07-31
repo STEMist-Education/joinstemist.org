@@ -1,4 +1,4 @@
-import useOnScreen from "@/lib/hooks/useOnScreen";
+import { useOnScreen } from "@/lib/hooks";
 import React, { useEffect, useRef, useState } from "react";
 import { useCountUp } from "use-count-up";
 import useHover from "./useHover";

@@ -1,4 +1,4 @@
-import useOnScreen from "@/lib/hooks/useOnScreen";
+import { useOnScreen } from "@/lib/hooks";
 import { scrollTo } from "@/lib/scroll";
 import { Transition } from "@headlessui/react";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/outline";

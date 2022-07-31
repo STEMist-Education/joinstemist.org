@@ -1,7 +1,7 @@
 import { resolveTeamImage } from "../../imageHelpers";
 import Person from "../../types/Person";
 
-const directors: Person[] = [
+export const directors: Person[] = [
   {
     name: "Steve Yang",
     positions: [],
@@ -27,5 +27,3 @@ const directors: Person[] = [
     image: resolveTeamImage(),
   },
 ];
-
-export default directors;

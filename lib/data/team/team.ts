@@ -1,5 +1,5 @@
-import { resolveTeamImage } from "../imageHelpers";
-import { ExtendedPerson } from "../types/Person";
+import { resolveTeamImage } from "../../imageHelpers";
+import { ExtendedPerson } from "../../types/Person";
 
 const people: ExtendedPerson[] = [
   {

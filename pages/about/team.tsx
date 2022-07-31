@@ -1,10 +1,7 @@
 import { memo, useMemo, useState } from "react";
-import staff from "@/lib/data/team/staff";
-import teachers from "@/lib/data/team/teachers";
 import { GetStaticProps } from "next";
 import TeamProps from "@/lib/types/TeamProps";
 import db from "@/lib/serverApp";
-import officers from "@/lib/data/team/officers";
 import { TeacherSubject } from "@/lib/types/Person";
 import PartialBanner from "@/components/layout/PartialBanner";
 import Container from "@/components/layout/Container";
@@ -13,6 +10,7 @@ import TeamSection from "@/components/pages/TeamSection";
 import LargePerson from "@/components/team/LargePerson";
 import Person from "@/components/team/Person";
 import Carousel from "@/components/team/Carousel";
+import { teachers, staff, officers } from "@/lib/data/team";
 
 function getTeachers() {
   let teacherRoles: TeacherSubject[] = [];

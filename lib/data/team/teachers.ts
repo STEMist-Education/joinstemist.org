@@ -1,8 +1,8 @@
 import type Person from "../../types/Person";
 import { TeacherSubject } from "../../types/Person";
-import people from "../team";
+import people from "./team";
 
-const teachers: Person<TeacherSubject>[] = people
+export const teachers: Person<TeacherSubject>[] = people
   .filter((person) => person.teacherRoles)
   .map((person) => ({
     name: person.name,
@@ -12,5 +12,3 @@ const teachers: Person<TeacherSubject>[] = people
     qualifications: person.qualifications,
     curriculumRoles: person.curriculumRoles,
   }));
-
-export default teachers;
