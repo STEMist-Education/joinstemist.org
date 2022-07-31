@@ -1,4 +1,4 @@
-export default interface InputFieldProps
+export interface InputFieldProps
   extends React.HTMLAttributes<HTMLInputElement> {
   labelName: string;
   name: string;

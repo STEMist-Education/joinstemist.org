@@ -1,4 +1,4 @@
-import SelectInputFieldProps from "@/lib/types/SelectInputFieldProps";
+import { SelectInputFieldProps } from "@/lib/types";
 
 export default function SelectInputField({
   name,

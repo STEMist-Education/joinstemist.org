@@ -2,12 +2,11 @@ import Container from "@/components/layout/Container";
 import PartialBanner from "@/components/layout/PartialBanner";
 import Card from "@/components/pages/Card";
 import Person from "@/components/team/Person";
-import teachers from "@/lib/data/team/teachers";
-import P from "@/lib/types/Person";
+import { teachers } from "@/lib/data/team";
+import type { Person as P } from "@/lib/types";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ReactNode, useCallback } from "react";
 import { Session, sessionData } from "@/lib/data/sessions";
-import { resolveTeamImage } from "@/lib/imageHelpers";
 
 interface CurriculumProps {
   data: Session;

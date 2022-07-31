@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import db from "@/lib/serverApp";
-import Person from "@/lib/types/Person";
-import teachers from "@/lib/data/team/teachers";
+import { Person } from "@/lib/types";
+import { teachers } from "@/lib/data/team";
 
 export default async function handler(
   req: NextApiRequest,

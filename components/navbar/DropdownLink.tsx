@@ -1,4 +1,4 @@
-import DropdownLinkProps from "@/lib/types/DropdownLinkProps";
+import { DropdownLinkProps } from "@/lib/types";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import { useRouter } from "next/router";

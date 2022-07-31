@@ -1,4 +1,4 @@
-import Person from "../../types/Person";
+import { Person } from "../../types";
 import people from "./team";
 
 export const officers: Person[] = people

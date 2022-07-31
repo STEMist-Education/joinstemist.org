@@ -1,5 +1,5 @@
 import { resolveTeamImage } from "../../imageHelpers";
-import Person from "../../types/Person";
+import { Person } from "../../types";
 
 export const directors: Person[] = [
   {

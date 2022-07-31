@@ -1,8 +1,8 @@
 import { memo, useMemo, useState } from "react";
 import { GetStaticProps } from "next";
-import TeamProps from "@/lib/types/TeamProps";
+import { TeamProps } from "@/lib/types";
 import db from "@/lib/serverApp";
-import { TeacherSubject } from "@/lib/types/Person";
+import { TeacherSubject } from "@/lib/types";
 import PartialBanner from "@/components/layout/PartialBanner";
 import Container from "@/components/layout/Container";
 import { Tab } from "@headlessui/react";

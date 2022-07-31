@@ -5,7 +5,7 @@ import {
   Linkedin,
   Youtube,
 } from "@icons-pack/react-simple-icons";
-import Social from "../types/Socials";
+import { Social } from "../types";
 
 const socials: Social[] = [
   {

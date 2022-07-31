@@ -1,5 +1,4 @@
-import type Person from "../../types/Person";
-import { TeacherSubject } from "../../types/Person";
+import { TeacherSubject, Person } from "../../types";
 import people from "./team";
 
 export const teachers: Person<TeacherSubject>[] = people

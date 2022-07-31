@@ -1,4 +1,4 @@
-import PageLinks from "@/lib/types/PageLinks";
+import { PageLinks } from "@/lib/types";
 import { ArrowRightIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 
