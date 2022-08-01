@@ -8,6 +8,7 @@ export default function HomeSection({
   side,
   position,
   bgtheme,
+  subtitle,
 }: {
   children: ReactNode;
   title: string;
@@ -15,23 +16,24 @@ export default function HomeSection({
   side: "left" | "right";
   position: string;
   bgtheme: "black" | "white";
+  subtitle?: string;
 }) {
   return (
     <section
       className={`${
         bgtheme === "black" ? "bg-steve-dark" : "bg-steve-light"
-      } cropped`}
+      } py-24`}
     >
-      <div className="padded-section justify-center grid grid-cols-9 min-h-[25rem] font-display text-elipsis py-3 gap-6">
+      <div className="padded-section justify-center grid grid-cols-8 min-h-[25rem] font-display text-elipsis py-3 gap-6 sm:gap-16">
         <div
-          className={`lg:col-span-5 col-span-9 my-auto order-1 ${
+          className={`lg:col-span-4 col-span-9 my-auto order-1 ${
             side === "left" ? "lg:order-1" : "lg:order-2"
           }`}
         >
           <h1
-            className={`text-4xl font-bold py-4 text-transparent bg-clip-text bg-gradient-to-l ${
+            className={`text-5xl font-bold inline-block py-4 text-transparent bg-clip-text bg-gradient-to-l ${
               bgtheme === "black"
-                ? "from-steve-light to-slate-300"
+                ? "from-steve-red to-steve-purple"
                 : "from-steve-purple to-steve-red"
             }`}
           >
@@ -40,7 +42,7 @@ export default function HomeSection({
           <p
             className={`${
               bgtheme === "black" ? "text-steve-light" : "text-steve-dark"
-            } text-xl font-sans font-light text-clip`}
+            } text-2xl font-sans font-light text-clip`}
           >
             {children}
           </p>

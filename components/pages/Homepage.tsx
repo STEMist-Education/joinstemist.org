@@ -1,8 +1,7 @@
-import HomeColumn from "./HomeColumn";
-import Counter from "./Counter";
 import HomeSection from "../layout/HomeSection";
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 import Link from "next/link";
+import HomeInfo from "./HomeInfo";
 
 const E = ({ children }: { children: ReactNode }) => (
   <span className="text-purple">{children}</span>
@@ -11,10 +10,7 @@ const E = ({ children }: { children: ReactNode }) => (
 export default function Homepage() {
   return (
     <>
-      <div
-        className="flex scroll-mt-24 flex-col m-auto"
-        id="hero"
-      >
+      <div className="flex scroll-mt-24 flex-col m-auto" id="hero">
         {/* <h1 className="text-center font-display text-4xl font-bold">
           What We Do
         </h1>
@@ -40,24 +36,12 @@ export default function Homepage() {
           race, gender, age, income with free to ultralow cost classes online
           and in person.
         </HomeSection>
-        <HomeSection
-          bgtheme={"black"}
-          title={`What We${"'"}ve Done`}
-          image="/home/demoedu.jpg"
-          side="right"
-          position="50% 50%"
-        >
-          We strive to <E>empower</E> students with <E>foundational concepts</E>{" "}
-          that will be vital to unlocking success in their lives. We{"'"}re
-          committed to provide <E>education for everyone</E>, regardless of
-          race, gender, age, income with free to ultralow cost classes online
-          and in person.
-        </HomeSection>
+        <HomeInfo />
         <HomeSection
           bgtheme={"white"}
           title="STEMist  Classes Reshaping the learning curve"
           image="/home/reshape.png"
-          side="left"
+          side="right"
           position="top center"
         >
           Our{" "}
@@ -75,7 +59,7 @@ export default function Homepage() {
           bgtheme={"black"}
           title="STEMist Hacks: Putting skills to work"
           image="/home/hacks.jpeg"
-          side="right"
+          side="left"
           position="top left"
         >
           <Link href="/hacks">
@@ -91,7 +75,7 @@ export default function Homepage() {
           bgtheme={"white"}
           title="Web Studio: {...}"
           image="/home/hacks.jpeg"
-          side="left"
+          side="right"
           position="top left"
         >
           <Link href="/hacks">
