@@ -35,13 +35,17 @@ export default function HomeInfo() {
             What We{"'"}ve Done
           </h1>
         </div>
-        <div className="grid grid-cols-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {items.map((item) => (
             <div
               key={item.text}
               className="w-72 flex flex-col items-center justify-center px-6 gap-2"
             >
-              <Image src={item.image} alt={item.text} />
+              <Image
+                src={item.image}
+                alt={item.text}
+                className="h-full w-full"
+              />
               <p className="text-white text-center text-xl">{item.text}</p>
               <Button
                 backgroundColor="bg-gradient-to-r from-steve-red to-steve-purple !py-1 !px-3"
