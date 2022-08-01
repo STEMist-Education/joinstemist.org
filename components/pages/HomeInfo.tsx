@@ -27,10 +27,10 @@ const items: { image: string; text: string; link: string }[] = [
 export default function HomeInfo() {
   return (
     <section className="bg-steve-dark py-24">
-      <div className="padded-section min-h-[25rem] flex flex-col items-center text-elipsis py-3 gap-6">
+      <div className="padded-section flex flex-col items-center text-elipsis py-3 gap-6">
         <div>
           <h1
-            className={`text-6xl font-bold font-display inline-block pb-2 text-transparent bg-clip-text bg-gradient-to-l from-steve-red to-steve-purple`}
+            className={`text-6xl font-bold font-display inline-block pb-2 text-transparent bg-clip-text bg-gradient-to-l from-steve-purple to-steve-red`}
           >
             What We{"'"}ve Done
           </h1>

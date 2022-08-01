@@ -5,6 +5,7 @@ import Hero from "@/components/pages/Hero";
 import { ArrowRightIcon } from "@heroicons/react/outline";
 import Button from "@/components/layout/Button";
 import Homepage from "@/components/pages/Homepage";
+import Testimonials from "@/components/pages/Testimonials";
 
 const events = ["STEMist Hacks", "Summer Classes"];
 
@@ -70,6 +71,7 @@ export default function Index() {
           </div> */}
         </Banner>
         <Homepage />
+        <Testimonials />
         <Hero />
       </div>
     </Container>

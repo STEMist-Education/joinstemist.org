@@ -159,3 +159,7 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.use-spring-carousel-thumbs-wrapper {
+  @apply justify-center;
+}
