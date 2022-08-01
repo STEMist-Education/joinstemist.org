@@ -25,9 +25,9 @@ module.exports = {
         steve: {
           dark: "#1D263B",
           light: "#FDFFFC",
-          red: "#F90B0B",
-          purple: "#8400FF",
-        }
+          red: "#D989FF",
+          purple: "#7C82FF",
+        },
       },
     },
     fontFamily: {
