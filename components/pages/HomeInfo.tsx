@@ -30,7 +30,7 @@ export default function HomeInfo() {
       <div className="padded-section min-h-[25rem] flex flex-col items-center text-elipsis py-3 gap-6">
         <div>
           <h1
-            className={`text-5xl font-bold font-display inline-block py-4 text-transparent bg-clip-text bg-gradient-to-l from-steve-red to-steve-purple`}
+            className={`text-6xl font-bold font-display inline-block pb-2 text-transparent bg-clip-text bg-gradient-to-l from-steve-red to-steve-purple`}
           >
             What We{"'"}ve Done
           </h1>
@@ -46,6 +46,7 @@ export default function HomeInfo() {
               <Button
                 backgroundColor="bg-gradient-to-r from-steve-red to-steve-purple !py-1 !px-3"
                 textColor="text-white font-light"
+                href={item.link}
               >
                 Learn More
               </Button>

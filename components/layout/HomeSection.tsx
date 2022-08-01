@@ -31,7 +31,7 @@ export default function HomeSection({
           }`}
         >
           <h1
-            className={`text-5xl font-bold inline-block py-4 text-transparent bg-clip-text bg-gradient-to-l ${
+            className={`text-6xl font-bold inline-block py-1 text-transparent bg-clip-text bg-gradient-to-l ${
               bgtheme === "black"
                 ? "from-steve-red to-steve-purple"
                 : "from-steve-purple to-steve-red"
@@ -39,6 +39,20 @@ export default function HomeSection({
           >
             {title}
           </h1>
+          {subtitle && (
+            <>
+              <br />
+              <h2
+                className={`text-4xl mt-0 mb-3 inline-block py-1 text-transparent bg-clip-text bg-gradient-to-l ${
+                  bgtheme === "black"
+                    ? "from-steve-red to-steve-purple"
+                    : "from-steve-purple to-steve-red"
+                }`}
+              >
+                {subtitle}
+              </h2>
+            </>
+          )}
           <p
             className={`${
               bgtheme === "black" ? "text-steve-light" : "text-steve-dark"
