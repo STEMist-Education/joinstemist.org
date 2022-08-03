@@ -17,7 +17,14 @@ const HomeCounter = (props: {
 
 export default function Hero() {
   return (
-    <div className="bg-black mt-5">
+    <div className="bg-black mt-5 pt-10">
+      <div className="flex justify-center">
+        <h1
+          className={`text-6xl font-bold font-display inline-block pb-2 text-transparent bg-clip-text bg-gradient-to-l from-steve-purple to-steve-red`}
+        >
+          By the Numbers
+        </h1>
+      </div>
       <div className="sm:grid-cols-2 lg:grid-cols-4 gap-3 grid-cols-1 py-10 px-24 m-auto place-items-center sm:min-h-[18rem] min-h-[30rem] grid scroll-mt-24 padded-section">
         <HomeCounter
           number={100}

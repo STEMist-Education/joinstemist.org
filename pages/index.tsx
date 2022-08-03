@@ -1,6 +1,5 @@
 import Banner from "@/components/layout/Banner";
 import Container from "@/components/layout/Container";
-import { scrollTo } from "@/lib/scroll";
 import Hero from "@/components/pages/Hero";
 import { ArrowRightIcon } from "@heroicons/react/outline";
 import Button from "@/components/layout/Button";
