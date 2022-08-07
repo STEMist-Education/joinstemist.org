@@ -224,7 +224,10 @@ export default function About() {
                     <FutureImage
                       alt={currentPhoto.alt}
                       src={currentPhoto.src}
-                      className="object-cover"
+                      height={0}
+                      width={672}
+                      className="object-cover w-full h-full"
+                      loading="eager"
                     />
                   </div>
                   {currentPhoto.alt || ""}

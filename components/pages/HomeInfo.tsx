@@ -44,6 +44,8 @@ export default function HomeInfo() {
               <Image
                 src={item.image}
                 alt={item.text}
+                width={256}
+                height={256}
                 className="h-full w-full"
               />
               <p className="text-white text-center text-xl">{item.text}</p>
