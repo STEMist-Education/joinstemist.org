@@ -6,6 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 export default function Testimonials() {
   const [toggle, setToggle] = useState(false);
   const [activeItem, setActiveItem] = useState("");
+  const [int, setInt] = useState<NodeJS.Timer>();
 
   const withSlide = useCallback((fn: () => void) => {
     return () => {
@@ -57,13 +58,11 @@ export default function Testimonials() {
     setActiveItem(getCurrentActiveItem().id);
   }, [toggle, getCurrentActiveItem]);
 
-  const [int, setInt] = useState<NodeJS.Timer>();
-
   useEffect(() => {
     setInt(
       setInterval(() => {
         withSlide(slideToNextItem)();
-      }, 7000)
+      }, 10000)
     );
     return () => clearInterval(int);
   }, [int, slideToNextItem, withSlide]);

@@ -70,8 +70,8 @@ export default function Index() {
           </div> */}
         </Banner>
         <Homepage />
-        <Testimonials />
         <Hero />
+        <Testimonials />
       </div>
     </Container>
   );
