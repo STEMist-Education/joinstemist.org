@@ -50,7 +50,7 @@ export default function Homepage() {
       <HomeSection
         bgtheme={"white"}
         title="WEBS Studio"
-        image="/home/hacks.jpeg"
+        image="/home/webs.png"
         side="right"
         position="top left"
         subtitle="Improving education, worldwide"
