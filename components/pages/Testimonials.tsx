@@ -2,11 +2,11 @@ import { useSpringCarousel } from "react-spring-carousel";
 import { testimonials } from "@/lib/data/testimonials";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import { useCallback, useEffect, useState } from "react";
+import { useInterval } from "@/lib/hooks";
 
 export default function Testimonials() {
   const [toggle, setToggle] = useState(false);
   const [activeItem, setActiveItem] = useState("");
-  const [int, setInt] = useState<NodeJS.Timer>();
 
   const withSlide = useCallback((fn: () => void) => {
     return () => {
@@ -58,14 +58,9 @@ export default function Testimonials() {
     setActiveItem(getCurrentActiveItem().id);
   }, [toggle, getCurrentActiveItem]);
 
-  useEffect(() => {
-    setInt(
-      setInterval(() => {
-        withSlide(slideToNextItem)();
-      }, 10000)
-    );
-    return () => clearInterval(int);
-  }, [int, slideToNextItem, withSlide]);
+  useInterval(() => {
+    withSlide(slideToNextItem)();
+  }, 10000);
 
   return (
     <section className="bg-steve-light py-24">

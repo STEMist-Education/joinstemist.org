@@ -56,10 +56,10 @@ export default function Homepage() {
         subtitle="Improving education, worldwide"
       >
         We Believe in Science Studios is a Youtube channel produced by STEMist
-        Education that aims to promote our brand across the seven seas. WEBS
+        Education that aims to promote our brand across the Seven Seas. WEBS
         Studio is dedicated to the belief that every child should have access to
         education, so by making videos, we try to bridge the gap between us here
-        in California to Chennai
+        in California to places all over the world.
       </HomeSection>
     </div>
   );
