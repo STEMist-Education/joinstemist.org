@@ -37,7 +37,7 @@ function Dropdown({ children, title, mobile, navLink }: DropdownLinkProps) {
         <Menu.Items
           className={`origin-top-right absolute ${
             mobile ? "left-0" : "right-0"
-          } mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none`}
+          } mt-2 w-56 rounded-none shadow-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none`}
         >
           <div className="py-1">{children}</div>
         </Menu.Items>
