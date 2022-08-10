@@ -52,7 +52,7 @@ export default function Homepage() {
         title="WEBS Studio"
         image="/home/webs.png"
         side="right"
-        position="top left"
+        position="top center"
         subtitle="Improving education, worldwide"
       >
         We Believe in Science Studios is a Youtube channel produced by STEMist

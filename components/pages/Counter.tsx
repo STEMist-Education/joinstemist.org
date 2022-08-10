@@ -37,7 +37,7 @@ export default function Counter(props: {
         <span ref={countUpRef}>{value}</span>
         {props.symbol && <span>{props.symbol}</span>}
       </span>
-      <div className="text-center text-xl font-light border-opacity-25">{props.text}</div>
+      <div className="text-center text-xl font-light">{props.text}</div>
     </div>
   );
 }
