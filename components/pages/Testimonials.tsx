@@ -72,16 +72,16 @@ export default function Testimonials() {
             Testimonials
           </h1>
         </div>
-        <div className="overflow-hidden w-full space-y-3 relative">
+        <div className="overflow-hidden w-full relative">
           <button
-            className="absolute h-full top-0 bottom-0 left-0 z-[1] flex items-center justify-center sm:w-[10%] w-[15%] p-0 text-black text-center bg-none border-0"
+            className="absolute h-full top-0 bottom-0 left-0 z-[1] flex items-center justify-center p-0 text-black text-center bg-none border-0"
             onClick={withSlide(slideToPrevItem)}
           >
             <ChevronLeftIcon className="w-9 h-9" />
           </button>
           {carouselFragment}
           <button
-            className="absolute h-full top-0 bottom-0 right-0 z-[1] flex items-center justify-center sm:w-[10%] w-[15%] p-0 text-black text-center bg-none border-0"
+            className="absolute h-full top-0 bottom-0 right-0 z-[1] flex items-center justify-center p-0 text-black text-center bg-none border-0"
             onClick={withSlide(slideToNextItem)}
           >
             <ChevronRightIcon className="w-9 h-9" />

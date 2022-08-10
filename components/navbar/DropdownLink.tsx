@@ -2,7 +2,7 @@ import { DropdownLinkProps } from "@/lib/types";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import { useRouter } from "next/router";
-import { Fragment, ReactNode } from "react";
+import { Fragment } from "react";
 
 function Dropdown({ children, title, mobile, navLink }: DropdownLinkProps) {
   const router = useRouter();
