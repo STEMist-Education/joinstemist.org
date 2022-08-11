@@ -5,6 +5,7 @@ interface Class {
   }[];
   name: string;
   teacher: string;
+  videos: string[];
 }
 
 export default Class;

@@ -1,4 +1,5 @@
 import ClassPosts from "@/components/auth/ClassPosts";
+import VideoPosts from "@/components/auth/VideoPosts";
 import Container from "@/components/layout/Container";
 import CTABanner from "@/components/layout/CTABanner";
 import PartialBanner from "@/components/layout/PartialBanner";
@@ -23,6 +24,7 @@ export default function Class(classData: Class & { included: boolean }) {
         subheader={<div className="mt-4">Taught by {classData.teacher}</div>}
       />
       <ClassPosts posts={classData.posts.reverse()} />
+      <VideoPosts videos={classData.videos} />
     </Container>
   );
 }
