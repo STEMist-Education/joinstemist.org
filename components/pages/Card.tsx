@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import Image from "next/image";
 
 export default function Card(props: {
   title: string;

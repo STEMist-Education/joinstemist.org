@@ -22,6 +22,13 @@ module.exports = {
         blue: {
           DEFAULT: "#CCE5FF",
         },
+        steve: {
+          dark: "#1D263B",
+          light: "#FDFFFC",
+          red: "#D989FF",
+          purple: "#7C82FF",
+          text: "#512367",
+        },
       },
     },
     fontFamily: {

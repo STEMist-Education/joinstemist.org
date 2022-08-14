@@ -1,4 +1,4 @@
-import useOnScreen from "@/lib/hooks/useOnScreen";
+import { useOnScreen } from "@/lib/hooks";
 import { scrollTo } from "@/lib/scroll";
 import { Transition } from "@headlessui/react";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/outline";
@@ -44,14 +44,12 @@ export default function Banner({
       <CTABanner full={full} />
       <div
         className={`${
-          full
-            ? "h-[100vh] short:h-[70vh] sm:h-screen"
-            : "sm:h-[70vh] h-[50vh] mb-5"
+          full ? "h-screen sm:h-[100vh]" : "sm:h-[100vh] h-[50vh] mb-5"
         } object-cover relative`}
         ref={titleDiv}
       >
         {full && (
-          <div className="absolute h-[90%] sm:h-full w-full flex justify-center items-end sm:-mt-10 pointer-events-none select-none text-white z-30">
+          <div className="absolute h-[90%] flex sm:h-full w-full justify-center items-end sm:-mt-10 pointer-events-none select-none text-white z-30">
             <button
               className="animate-bounce pointer-events-auto select-auto"
               onClick={scrollTo(href)}

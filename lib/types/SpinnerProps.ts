@@ -1,4 +1,4 @@
-export default interface SpinnerProps {
+export interface SpinnerProps {
   color: string;
   className?: string;
 }
