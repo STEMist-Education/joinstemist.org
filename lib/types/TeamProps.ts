@@ -1,5 +1,5 @@
-import type Person from "./Person";
+import type { Person } from "./Person";
 
-export default interface TeamProps {
+export interface TeamProps {
   data: Person[];
 }

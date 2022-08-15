@@ -1,8 +1,7 @@
-import { ReactNode } from "react";
+import { Icon } from "@icons-pack/react-simple-icons";
 
-type Social = {
-  icon: ReactNode;
+export type Social = {
+  icon: typeof Icon;
   link: string;
+  color: string;
 };
-
-export default Social;

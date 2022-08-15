@@ -1,7 +1,7 @@
 import Container from "@/components/layout/Container";
 import PartialBanner from "@/components/layout/PartialBanner";
 import LinkPage from "@/components/pages/LinkPage";
-import PageLinks from "@/lib/types/PageLinks";
+import { PageLinks } from "@/lib/types";
 
 const aboutLinks: PageLinks[] = [
   {

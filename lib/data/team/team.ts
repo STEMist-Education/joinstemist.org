@@ -1,5 +1,5 @@
-import { resolveTeamImage } from "../imageHelpers";
-import { ExtendedPerson } from "../types/Person";
+import { resolveTeamImage } from "../../imageHelpers";
+import { ExtendedPerson } from "../../types";
 
 const people: ExtendedPerson[] = [
   {
@@ -241,7 +241,7 @@ const people: ExtendedPerson[] = [
     officerRoles: ["Director of HR"],
     image: resolveTeamImage("Sriman Ratnapu"),
     description:
-      "Sriman is a sophomore at Lynbrook High School likes to play video games and read books.",
+      "Sriman is a high school sophmore at Lynbrook. He likes to go to the zoo, read books and play video games. His favorite animal is the river otter.",
     email: "srimanratnapu@joinstemist.org",
   },
   {
@@ -263,7 +263,7 @@ const people: ExtendedPerson[] = [
     teamRoles: ["Intern", "Technology", "Hackathon"],
     image: resolveTeamImage("Sarvesh Madullapalli"),
     description:
-      "Sarvesh knows Python, Java, web development, and some C++. He has won 4 hackathons and is a very good team leader. He knows and contributes to almost all popular libraries, specializing in Python. ",
+      "Sarvesh knows Python, Java, web development, and some C++. He has won 4 hackathons and is a very good team leader. He knows and contributes to almost all popular libraries, specializing in Python.",
     qualifications: [
       "Won 5 Hackathons",
       "Top 2% in LHD",

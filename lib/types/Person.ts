@@ -1,4 +1,4 @@
-type Person<T = string> = {
+export type Person<T = string> = {
   name: string;
   positions: T[];
   description: string;
@@ -52,5 +52,3 @@ export type TeamRole =
   | "Website"
   | "Hackathon"
   | "WEBS";
-
-export default Person;

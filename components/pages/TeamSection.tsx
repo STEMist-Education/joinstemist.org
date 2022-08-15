@@ -1,6 +1,6 @@
-import Person from "@/lib/types/Person";
+import { Person } from "@/lib/types";
 import { FC, ReactNode } from "react";
-import PersonProps from "@/lib/types/PersonProps";
+import { PersonProps } from "@/lib/types";
 
 interface TeamSectionProps {
   people: Person[];
