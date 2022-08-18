@@ -44,6 +44,7 @@ export default function SignUp() {
   const [image, setImage] = useState<string>("");
 
   const handleError = (e: FirebaseError) => {
+    console.error(JSON.stringify(e))
     let code = e.code.substring(5).replace(/-/g, " ");
     code = code.charAt(0).toUpperCase() + code.slice(1);
     setMessage(code);
@@ -65,8 +66,24 @@ export default function SignUp() {
         classes: [],
         role: "student",
       });
-    } catch (error) {
-      handleError(error as FirebaseError);
+      const headers = new Headers({
+        'Content-Type': 'application/json'
+      })
+
+      const json = JSON.stringify({
+        name: user.displayName!,
+        role: "student",
+        email: user.email,
+        lastSignIn: user.metadata.lastSignInTime
+      })
+      await fetch("/api/autoemailer", {body: json, headers})
+    } catch (error: any) {
+      if (error.code) {
+        handleError(error as FirebaseError);
+      } else {
+        console.log("Firebase NOT Error" + JSON.stringify(error))
+        alert("Try Catch not working")
+      }
     }
   }
 
@@ -107,6 +124,18 @@ export default function SignUp() {
           classes: [],
           role: "student",
         });
+        const headers = new Headers({
+        'Content-Type': 'application/json'
+      })
+
+      const json = JSON.stringify({
+        name,
+        role: "student",
+        email: user.email!,
+        lastSignIn: user.metadata.lastSignInTime!
+      })
+        
+      await fetch("/api/autoemailer", {body: json, headers})
         // setSubmitting(false);
       } catch (error) {
         handleError(error as FirebaseError);
