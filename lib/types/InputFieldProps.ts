@@ -1,6 +1,6 @@
-import {MutableRefObject} from 'react';
+import { MutableRefObject } from "react";
 
-export default interface InputFieldProps
+export interface InputFieldProps
   extends React.HTMLAttributes<HTMLInputElement> {
   labelName: string;
   name: string;
@@ -10,7 +10,7 @@ export default interface InputFieldProps
   formik: any;
   errorClass?: string;
   as?: "input" | "textarea";
-  secure?: boolean
-  value?: string,
-  ref?: MutableRefObject<any>
+  secure?: boolean;
+  value?: string;
+  ref?: MutableRefObject<any>;
 }

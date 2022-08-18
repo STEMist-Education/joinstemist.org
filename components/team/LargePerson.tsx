@@ -1,7 +1,7 @@
 import Image from "next/image";
-import PersonProps from "@/lib/types/PersonProps";
+import { PersonProps } from "@/lib/types";
 import { MailIcon } from "@heroicons/react/outline";
-import useWindowSize from "@/lib/hooks/useWindowSize";
+import { useWindowSize } from "@/lib/hooks";
 
 export default function LargePerson(props: PersonProps) {
   const { width } = useWindowSize();

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import PersonProps from "@/lib/types/PersonProps";
+import { PersonProps } from "@/lib/types";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import Qualifications from "./Qualifications";

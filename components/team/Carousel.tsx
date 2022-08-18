@@ -1,5 +1,5 @@
 import CarouselPerson from "./CarouselPerson";
-import TeamProps from "@/lib/types/TeamProps";
+import { TeamProps } from "@/lib/types";
 
 export default function Carousel(props: TeamProps) {
   return (

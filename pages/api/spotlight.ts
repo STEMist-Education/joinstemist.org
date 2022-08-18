@@ -1,9 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import teachers from "@/lib/data/team/teachers";
+import { teachers } from "@/lib/data/team";
 import { sample } from "lodash";
-import type Person from "@/lib/types/Person";
+import { Person } from "@/lib/types";
 import db from "@/lib/serverApp";
-import { TeacherSubject } from "@/lib/types/Person";
+import { TeacherSubject } from "@/lib/types";
 
 export default async function handler(
   req: NextApiRequest,

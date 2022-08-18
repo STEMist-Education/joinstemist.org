@@ -1,4 +1,4 @@
-import InputFieldProps from "@/lib/types/InputFieldProps";
+import { InputFieldProps } from "@/lib/types";
 
 export default function InputField({
   secure = true,

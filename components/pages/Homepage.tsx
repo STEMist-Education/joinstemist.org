@@ -1,77 +1,66 @@
-import HomeColumn from "./HomeColumn";
-import Counter from "./Counter";
 import HomeSection from "../layout/HomeSection";
-import { FC, ReactNode } from "react";
-import Link from "next/link";
+// import { ReactNode } from "react";
+import HomeInfo from "./HomeInfo";
 
-const E = ({ children }: { children: ReactNode }) => (
-  <span className="text-purple">{children}</span>
-);
+// const E = ({ children }: { children: ReactNode }) => (
+//   <span className="text-purple">{children}</span>
+// );
 
 export default function Homepage() {
   return (
-    <>
-      <div
-        className="flex scroll-mt-24 my-10 flex-col padded-section m-auto"
-        id="hero"
+    <div className="flex scroll-mt-24 flex-col m-auto" id="hero">
+      <HomeSection
+        bgtheme={"white"}
+        title="Our Mission: Education For All"
+        image="/home/demoedu.jpg"
+        side="left"
+        position="50% 50%"
       >
-        {/* <h1 className="text-center font-display text-4xl font-bold">
-          What We Do
-        </h1>
-        <p className="text-lg text-center px-3">
-          Our goal is not only to teach kids STEM. We hope to empower students
-          with foundational concepts they will use throughout their life. To
-          accomplish this, we host workshops over Zoom to help students learn
-          about various topics in our modern society. These workshops take place
-          during school breaks such as Spring and Winter break. In the summer,
-          we opt for a comprehensive curriculum that delves more in-depth into
-          STEM topics.{" "}
-        </p> */}
-        <HomeSection
-          title="Democratization of education"
-          image="/home/demoedu.jpg"
-          side="left"
-          position="50% 50%"
-        >
-          We strive to <E>empower</E> students with <E>foundational concepts</E>{" "}
-          that will be vital to unlocking success in their lives. We{"'"}re
-          committed to provide <E>education for everyone</E>, regardless of
-          race, gender, age, income with free to ultralow cost classes online
-          and in person.
-        </HomeSection>
-        <HomeSection
-          title="Reshaping the learning curve"
-          image="/home/reshape.png"
-          side="right"
-          position="top center"
-        >
-          Our{" "}
-          <Link href="/programs">
-            <a className="underline decoration-purple underline-offset-1">
-              <E>Summer 2022 STEM Course</E>
-            </a>
-          </Link>{" "}
-          provides an intensive 5-week course that <E>accelerates</E> the
-          internalization of concepts taught during class. Learning is
-          reinforced with kahoots that promote note-taking and long term memory
-          recall.
-        </HomeSection>
-        <HomeSection
-          title="Putting skills to work"
-          image="/home/hacks.jpeg"
-          side="left"
-          position="top left"
-        >
-          <Link href="/hacks">
-            <a className="underline decoration-purple underline-offset-1 text">
-              <E>STEMist Hacks</E>
-            </a>
-          </Link>{" "}
-          encourages students to put their programming skills to work, with{" "}
-          <E>riveting speaker talks</E> by real life professionals and tens of
-          thousands of dollars in prizes.
-        </HomeSection>
-      </div>
-    </>
+        We strive to empower students with foundational concepts that will be
+        vital to unlocking success in their lives. We{"'"}re committed to
+        provide education for everyone, regardless of race, gender, age, income
+        with free to ultralow cost classes online and in person.
+      </HomeSection>
+      <HomeInfo />
+      <HomeSection
+        bgtheme={"white"}
+        title="STEMist Classes"
+        image="/home/reshape.png"
+        side="right"
+        position="top center"
+        subtitle="Reshaping the learning curve"
+      >
+        Our Summer 2022 STEM Course provides an intensive 5-week course that
+        accelerates the internalization of concepts taught during class.
+        Learning is reinforced with kahoots that promote note-taking and long
+        term memory recall.
+      </HomeSection>
+      <HomeSection
+        bgtheme={"black"}
+        title="STEMist Hacks"
+        image="/home/hacks.jpeg"
+        side="left"
+        position="top left"
+        subtitle="Putting skills to work"
+      >
+        STEMist Hacks encourages students to put their programming skills to
+        work, with riveting speaker talks by real life professionals and tens of
+        thousands of dollars in prizes.
+      </HomeSection>
+      <HomeSection
+        bgtheme={"white"}
+        title="WEBS Studio"
+        image="/home/webs.png"
+        side="right"
+        position="top center"
+        subtitle="Improving education, worldwide"
+      >
+        We Believe in Science Studios is a Youtube channel produced by STEMist
+        Education that aims to promote our brand across the Seven Seas. WEBS
+        Studio is dedicated to the belief that every child should have access to
+        education, so by making videos, we try to bridge the gap between us here
+        in California to places all over the world.
+      </HomeSection>
+    </div>
   );
 }

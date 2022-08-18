@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import NavLinkProps from "@/lib/types/NavLinkProps";
+import { NavLinkProps } from "@/lib/types";
 import { useMemo } from "react";
 import Image from "next/image";
-import { useData } from "@/lib/hooks/useData";
 
 export default function NavLink({
   children,

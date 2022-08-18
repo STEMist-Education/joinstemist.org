@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
-import teachers from "@/lib/data/team/teachers";
+import { teachers } from "@/lib/data/team";
 import Person from "../team/Person";
-import type person from "@/lib/types/Person";
+import type { Person as person } from "@/lib/types";
 
 const csTeachers = [...teachers]
   .filter((person) => person.positions.includes("Computer Science"))
