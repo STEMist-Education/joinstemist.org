@@ -70,6 +70,29 @@ export default function Navbar({
                     {navTitle}
                   </span>
                 </div>
+                <div className="flex items-center gap-1">
+                  <Link href="/portal">
+                    <a>
+                      <h1 className="font-display text-2xl font-bold">
+                        <div className="flex items-center gap-1 p-1">
+                          <Image
+                            src="http://yantraz.com/tools/hostingfiles/stemist/stemist%20student%20portal.png"
+                            alt="PORTAL"
+                            priority
+                            height={47.005}
+                            width={141.61}
+                            className="select-none"
+                          />
+                        </div>
+                      </h1>
+                    </a>
+                  </Link>
+                  <span className="font-semibold text-2xl font-display text-white">
+                    {navTitle}
+                  </span>
+                </div>
+                
+                
                 <Disclosure.Button className="lg:hidden">
                   <span className="sr-only">Open main menu</span>
                   {open ? (

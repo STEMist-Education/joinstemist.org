@@ -34,6 +34,9 @@ const config = {
       allowFutureImage: true,
     },
   },
+  images: {
+    domains: ['yantraz.com'],
+  },
 };
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
