@@ -75,7 +75,7 @@ const people: ExtendedPerson[] = [
   },
   {
     name: "Snehil Kakani",
-    officerRoles: ["Director of Technology"],
+    officerRoles: ["Director of Technology", "Co-Director of WEBS Studio"],
     teacherRoles: ["Computer Science"],
     curriculumRoles: {
       cs: ["Javascript", "Python"],
@@ -238,7 +238,7 @@ const people: ExtendedPerson[] = [
   },
   {
     name: "Sriman Ratnapu",
-    officerRoles: ["Director of HR"],
+    officerRoles: ["Director of HR", "Co-Director of WEBS Studio"],
     image: resolveTeamImage("Sriman Ratnapu"),
     description:
       "Sriman is a high school sophmore at Lynbrook. He likes to go to the zoo, read books and play video games. His favorite animal is the river otter.",
@@ -311,7 +311,6 @@ const people: ExtendedPerson[] = [
   },
   {
     name: "Aryan Patnaik",
-    officerRoles: ["Director of WEBS Studio"],
     teacherRoles: ["Biology"],
     curriculumRoles: {
       bio: ["Ecology"],
@@ -358,20 +357,20 @@ const people: ExtendedPerson[] = [
     description:
       "Sarthak Ratan is a sophomore at Lynbrook high who enjoys science, designing, and business. When he isn’t working he loves swimming, playing the guitar, or talking to friends.",
   },
-  {
-    name: "Yash Singh",
-    teamRoles: ["Technology", "Website", "Intern"],
-    description:
-      "Yash Singh is a computer science and math fanatic who codes in his free time and can often be found in hackathons. He likes to go on hikes and play basketball when he is not studying.",
-    image: resolveTeamImage("Yash Singh"),
-    qualifications: [
-      "Advanced TypeScript and C++ Developer",
-      "Front-end Web Developer",
-      "Open Source Contributor and Maintainer",
-      "Mermaid.js Core Maintainer",
-      "Schema-Inspector Maintainer",
-    ],
-  },
+  // {
+  //   name: "Yash Singh",
+  //   teamRoles: ["Technology", "Website", "Intern"],
+  //   description:
+  //     "Yash Singh is a computer science and math fanatic who codes in his free time and can often be found in hackathons. He likes to go on hikes and play basketball when he is not studying.",
+  //   image: resolveTeamImage("Yash Singh"),
+  //   qualifications: [
+  //     "Advanced TypeScript and C++ Developer",
+  //     "Front-end Web Developer",
+  //     "Open Source Contributor and Maintainer",
+  //     "Mermaid.js Core Maintainer",
+  //     "Schema-Inspector Maintainer",
+  //   ],
+  // },
   {
     name: "Aadharsh Rajkumar",
     description:
