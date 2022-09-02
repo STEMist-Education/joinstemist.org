@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useMemo } from "react";
+import { useWindowSize } from "@/lib/hooks";
 
 export default function HomeSection({
   children,
@@ -17,12 +18,13 @@ export default function HomeSection({
   position: string;
   bgtheme: "black" | "white";
   subtitle?: string;
-}) {
+  }) {
+  
   return (
     <section
       className={`${
         bgtheme === "black" ? "bg-steve-dark" : "bg-steve-light"
-      } py-24`}
+      } py-24 xs:text-center xs:justify-center`}
     >
       <div className="padded-section justify-center grid grid-cols-8 min-h-[25rem] font-display text-elipsis py-3 gap-6 sm:gap-16">
         <div
@@ -31,7 +33,7 @@ export default function HomeSection({
           }`}
         >
           <h1
-            className={`text-6xl font-bold inline-block py-1 text-transparent bg-clip-text bg-gradient-to-l ${
+            className={`text-6xl xs:text-4xl font-bold inline-block py-1 text-transparent bg-clip-text bg-gradient-to-l ${
               bgtheme === "black"
                 ? "from-steve-red to-steve-purple"
                 : "from-steve-purple to-steve-red"
@@ -56,7 +58,7 @@ export default function HomeSection({
           <p
             className={`${
               bgtheme === "black" ? "text-steve-light" : "text-steve-dark"
-            } text-2xl mt-8 font-sans font-light text-clip`}
+            } text-2xl xs:text-xl mt-8 font-sans font-light text-clip`}
           >
             {children}
           </p>

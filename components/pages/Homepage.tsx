@@ -1,12 +1,25 @@
 import HomeSection from "../layout/HomeSection";
 // import { ReactNode } from "react";
+import { useWindowSize } from "@/lib/hooks";
 import HomeInfo from "./HomeInfo";
+import { useState, useMemo, useEffect } from "react";
 
 // const E = ({ children }: { children: ReactNode }) => (
 //   <span className="text-purple">{children}</span>
 // );
 
 export default function Homepage() {
+
+  let { height, width } = useWindowSize()
+  
+  const isMobile = useMemo(() => {
+    if (width! <= 420) {
+      return true
+    } else {
+      return false
+    }
+  }, [height, width, useWindowSize])
+
   return (
     <div className="flex scroll-mt-24 flex-col m-auto" id="hero">
       <HomeSection
@@ -17,7 +30,11 @@ export default function Homepage() {
         position="50% 50%"
       >
         We strive to empower students with foundational concepts that will be
-        vital to unlocking success in their lives. We{"'"}re committed to
+        vital to unlocking success in their lives.
+
+      {isMobile ? <div className="py-3" />: null}
+      
+        We{"'"}re committed to
         provide education for everyone, regardless of race, gender, age, income
         with free to ultralow cost classes online and in person.
       </HomeSection>
