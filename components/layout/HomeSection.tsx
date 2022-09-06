@@ -24,9 +24,9 @@ export default function HomeSection({
     <section
       className={`${
         bgtheme === "black" ? "bg-steve-dark" : "bg-steve-light"
-      } py-24 xs:text-center xs:justify-center`}
+      } py-24`}
     >
-      <div className="padded-section justify-center grid grid-cols-8 min-h-[25rem] font-display text-elipsis py-3 gap-6 sm:gap-16">
+      <div className="padded-section  grid grid-cols-8 min-h-[25rem] font-display text-elipsis py-3 gap-6 sm:gap-16">
         <div
           className={`lg:col-span-4 col-span-9 my-auto order-1 ${
             side === "left" ? "lg:order-1" : "lg:order-2"
