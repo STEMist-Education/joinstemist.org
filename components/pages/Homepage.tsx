@@ -34,7 +34,7 @@ export default function Homepage() {
 
       {isMobile ? <div className="py-3" />: null}
       
-        We{"'"}re committed to
+         We{"'"}re committed to
         provide education for everyone, regardless of race, gender, age, income
         with free to ultralow cost classes online and in person.
       </HomeSection>
