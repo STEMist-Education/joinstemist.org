@@ -19,6 +19,7 @@ import { FirebaseError } from "firebase/app";
 import Google from "@/public/google.svg";
 import { useData } from "@/lib/hooks/useData";
 import { useRouter } from "next/router";
+import Link from 'next/link'
 
 interface SignUpForm {
   email: string;
@@ -206,6 +207,8 @@ export default function SignUp() {
                   <Image src={Google} alt="Google Logo" />
                   Login with Google
                 </button>
+
+                
               </div>
             </div>
           </form>

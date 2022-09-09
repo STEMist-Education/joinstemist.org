@@ -16,6 +16,7 @@ import { useRouter } from "next/router";
 import Google from "@/public/google.svg";
 import { FirebaseError } from "firebase/app";
 import * as Yup from "yup";
+import Link from 'next/link'
 
 interface LoginFormik {
   email: string;
@@ -113,7 +114,7 @@ export default function Login() {
                   type="submit"
                   className="relative block w-full rounded-none border border-transparent bg-black bg-opacity-10 py-2 px-2 text-sm font-medium text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
                 >
-                  Submit
+                  Log In
                 </button>
                 <button
                   className="relative w-full rounded-none border border-transparent bg-black bg-opacity-10 py-2 px-2 text-sm font-medium text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 flex items-center gap-2 justify-center"
@@ -123,6 +124,14 @@ export default function Login() {
                   <Image src={Google} alt="Google Logo" />
                   Login with Google
                 </button>
+                <Link href="/auth/register">
+              <button
+                  className="relative w-full rounded-none border border-transparent bg-black bg-opacity-10 py-2 px-2 text-sm font-medium text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 flex items-center gap-2 justify-center"
+                  type="button"
+                >
+                  Register instead
+                </button>
+              </Link>
               </div>
             </div>
           </form>
