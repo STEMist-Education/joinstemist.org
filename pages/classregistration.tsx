@@ -6,6 +6,7 @@ import { ArrowRightIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import { memo, useState, useRef, useEffect } from "react";
 import { getCookie } from 'cookies-next';
+import { keys } from "lodash";
 
 
 
@@ -13,6 +14,10 @@ export default function Programs() {
   let userinfo;
   let username;
   let uid;
+  let classesmap = {
+    "Fake (Math)":  'MMMwuzDS7C5M4wj1zwch',
+    "Fake (Phy)": 'LZ330xVM4h0jkijbSaho',
+  };
   try {
   userinfo = JSON.parse(getCookie('user'))
   username = userinfo["name"]
@@ -20,7 +25,17 @@ export default function Programs() {
   } catch {
     username="Please Log In First!"
     uid="Please Log In First!"
-  }
+  };
+  function createSelectItems() {
+    let toReturn = [];
+    toReturn.push((<option key={0} value={null}>choose a class</option>))
+    for (let i=1; i<Object.keys(classesmap).length+1; i++){
+      toReturn.push((<option key={i} value={Object.keys(classesmap)[i-1]}>{Object.keys(classesmap)[i-1]}</option>))
+    }
+    console.log(toReturn)
+    return toReturn;
+} 
+createSelectItems()
   return (
     <Container title="Class Registration">
       <PartialBanner
@@ -45,7 +60,9 @@ export default function Programs() {
         <label for="fullname">Full name: </label><br></br>
         <input type="text" id="fullname" name="fullname" /><br></br><br></br>
         <label for="class1">Class: </label>
-        <input type="dropdown" id="class1" name="class1" /><br></br><br></br>
+        <select id="class1" name="class1">
+        {createSelectItems()}
+        </select><br></br><br></br>
         <Button
             backgroundColor="bg-blue-500"
             textColor="text-white text-xl"
