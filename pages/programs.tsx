@@ -9,7 +9,7 @@ export default function Programs() {
   return (
     <Container title="Class Registration">
       <PartialBanner
-        title="Summer Class Registration"
+        title="2029 (Test) Class Registration"
         subheader="Join in on the interactive STEM learning experience"
       />
       <h1 className="text-center font-display text-4xl font-bold mb-8">
@@ -19,7 +19,7 @@ export default function Programs() {
         <div className="col-span-1"></div>
         <div className="col-span-4">
           <Image
-            src="/summer-flyer.png"
+            src="/favicon.png"
             alt="Flyer for STEMist Summer Class 2022"
             width={435}
             height={580}
@@ -28,14 +28,12 @@ export default function Programs() {
         </div>
         <div className="col-span-8 flex justify-center gap-3 flex-col items-center px-5">
           <p className="text-3xl">
-            STEMist is proud to announce our Summer 2022 Course from 6/13 to
-            7/24. Classes are 1 to 1.5 hours long and four unique classes are
-            offered, including Intro to USACO and Machine Learning, AMC8 and
-            MATHCOUNTS Preparation, Intro to USABO and our Physical Science
-            course at $10 per week.
+            STEMist is proud to announce our Summer 2029 Course from 13/13 to
+            14/24. Classes are 25 to 25.5 hours long and one unique class is
+            offered; the Intro to Nothing course at $1,000,000 per week.
           </p>
           <Button
-            href="/signup"
+            href="/classregistration"
             backgroundColor="bg-blue-500"
             textColor="text-white text-xl"
             target="_blank"

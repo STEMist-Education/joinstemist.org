@@ -122,7 +122,7 @@ export default function SignUp() {
         await fetchUser("POST", user.uid, {
           name,
           profileUrl: url,
-          classes: [],
+          classes: ["generalinfo"],
           role: "student",
         });
         const headers = new Headers({
