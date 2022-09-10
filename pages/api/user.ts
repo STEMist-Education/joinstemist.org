@@ -52,20 +52,6 @@ const handler: NextApiHandler = async (req, res) => {
     } catch {
       res.status(500).send("Internal Server Error");
     }
-  } else if (req.method === "CLASSADD") {
-    try {
-      const body = JSON.parse(req.body);
-      await updateData<StudentData>(
-        {
-          classes: body.classes
-        },
-        body.uid,
-        "users"
-      );
-      return res.json({});
-    } catch {
-      res.status(500).send("Internal Server Error");
-    }
   }
   res.status(405).send("Method Not Allowed");
 }; 

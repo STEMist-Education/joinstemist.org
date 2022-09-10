@@ -8,6 +8,13 @@ import { memo, useState, useRef, useEffect } from "react";
 import { getCookie } from 'cookies-next';
 import { keys } from "lodash";
 import { fetchUser } from "@/lib/auth/fetch";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+//import db from "/lib/serverApp";
 
 
 
@@ -36,19 +43,28 @@ export default function Programs() {
     }
     return toReturn;
 } 
-async function handleCRegistration() {
-  console.log(selectchoice)
-    fetchUser("POST", uid, {
-      classes: selectchoice//document.getElementById("class1").value,
-    })
-    /*await fetchUser("POST", user.uid, {
-      username,
-      classes: user.classes+document.getElementById("class1").value,
+const handleCRegistration = async () => {
+    /*await fetchUser("PUT", uid, {
+      classes: ['nameofclass'],//document.getElementById("class1").value,
+    })*/
+    userinfo.classes.push(selectchoice)
+    await fetchUser("PUT", uid, {
+      name:username,
+      profileUrl: "/avatar.svg",
+      classes: userinfo.classes,
       role: "student",
-    });*/
+    });
+    //await db.collection(uid).doc(key).update(data);
+    console.log('reached')
   
 }
-createSelectItems()
+const UPDATECHOICE = () => {
+  useEffect(()=>{
+    selectchoice = document.getElementById("class1").value
+  }, [])
+}
+
+
   return (
     <Container title="Class Registration">
       <PartialBanner
@@ -63,7 +79,7 @@ createSelectItems()
       </h2>
       <center>
       <div>
-      <form onSubmit={handleCRegistration()}>
+      <form>
       <label for="user">Username: </label><br></br>
         <input type="text" id="user" name="user" disabled={true} value={username}/><br></br><br></br>
         <label for="email">UID (do not share):  </label><br></br>
@@ -73,14 +89,15 @@ createSelectItems()
         <label for="fullname">Full name: </label><br></br>
         <input type="text" id="fullname" name="fullname" /><br></br><br></br>
         <label for="class1">Class: </label>
-        <select id="class1" name="class1" onSelect={selectchoice=this}>
+        <select id="class1" name="class1" onSelect={UPDATECHOICE}>
         {createSelectItems()}
         </select><br></br><br></br>
         <Button
             backgroundColor="bg-blue-500"
             textColor="text-white text-xl"
             target="_blank"
-            type="submit"
+            type="button"
+            onClick={handleCRegistration}
           >
             Join Class!{" "}
             <ArrowRightIcon className="h-4 w-4 inline-block transform -rotate-45" />

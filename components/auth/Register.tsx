@@ -110,7 +110,7 @@ export default function SignUp() {
           await fetchUser("POST", user.uid, {
             name,
             profileUrl: "/avatar.svg",
-            classes: [],
+            classes: ["generalinfo"],
             role: "student",
           });
           // setSubmitting(false);
