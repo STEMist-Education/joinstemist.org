@@ -82,13 +82,13 @@ const UPDATECHOICE = () => {
       <form>
       <label for="user">Username: </label><br></br>
         <input type="text" id="user" name="user" disabled={true} value={username}/><br></br><br></br>
-        <label for="email">UID (do not share):  </label><br></br>
+        <label htmlFor="email">UID (do not share):  </label><br></br>
         <input type="text" id="user" name="user" disabled={true} value={uid}/><br></br><br></br>
-        <label for="email">Email Address: </label><br></br>
+        <label htmlFor="email">Email Address: </label><br></br>
         <input type="text" id="email" name="email" /><br></br><br></br>
-        <label for="fullname">Full name: </label><br></br>
+        <label htmlFor="fullname">Full name: </label><br></br>
         <input type="text" id="fullname" name="fullname" /><br></br><br></br>
-        <label for="class1">Class: </label>
+        <label htmlFor="class1">Class: </label>
         <select id="class1" name="class1" onSelect={UPDATECHOICE}>
         {createSelectItems()}
         </select><br></br><br></br>
