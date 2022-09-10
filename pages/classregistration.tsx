@@ -7,6 +7,7 @@ import Image from "next/image";
 import { memo, useState, useRef, useEffect } from "react";
 import { getCookie } from 'cookies-next';
 import { keys } from "lodash";
+import { fetchUser } from "@/lib/auth/fetch";
 
 
 
@@ -18,6 +19,7 @@ export default function Programs() {
     "Fake (Math)":  'MMMwuzDS7C5M4wj1zwch',
     "Fake (Phy)": 'LZ330xVM4h0jkijbSaho',
   };
+  let selectchoice;
   try {
   userinfo = JSON.parse(getCookie('user'))
   username = userinfo["name"]
@@ -32,9 +34,20 @@ export default function Programs() {
     for (let i=1; i<Object.keys(classesmap).length+1; i++){
       toReturn.push((<option key={i} value={Object.keys(classesmap)[i-1]}>{Object.keys(classesmap)[i-1]}</option>))
     }
-    console.log(toReturn)
     return toReturn;
 } 
+async function handleCRegistration() {
+  console.log(selectchoice)
+    fetchUser("POST", uid, {
+      classes: selectchoice//document.getElementById("class1").value,
+    })
+    /*await fetchUser("POST", user.uid, {
+      username,
+      classes: user.classes+document.getElementById("class1").value,
+      role: "student",
+    });*/
+  
+}
 createSelectItems()
   return (
     <Container title="Class Registration">
@@ -50,7 +63,7 @@ createSelectItems()
       </h2>
       <center>
       <div>
-      <form>
+      <form onSubmit={handleCRegistration()}>
       <label for="user">Username: </label><br></br>
         <input type="text" id="user" name="user" disabled={true} value={username}/><br></br><br></br>
         <label for="email">UID (do not share):  </label><br></br>
@@ -60,7 +73,7 @@ createSelectItems()
         <label for="fullname">Full name: </label><br></br>
         <input type="text" id="fullname" name="fullname" /><br></br><br></br>
         <label for="class1">Class: </label>
-        <select id="class1" name="class1">
+        <select id="class1" name="class1" onSelect={selectchoice=this}>
         {createSelectItems()}
         </select><br></br><br></br>
         <Button
