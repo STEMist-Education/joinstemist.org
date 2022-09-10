@@ -8,9 +8,9 @@ import { getCookie } from 'cookies-next';
 import { fetchUser } from "@/lib/auth/fetch";
 
 
-let userinfo : object;
-let username : string;
-let uid: string;
+let userinfo;
+let username;
+let uid;
 let classesmap = {
   "Fake (Math)":  'MMMwuzDS7C5M4wj1zwch',
   "Fake (Phy)": 'LZ330xVM4h0jkijbSaho',
