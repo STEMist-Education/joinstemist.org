@@ -3,70 +3,59 @@ import Container from "@/components/layout/Container";
 import PartialBanner from "@/components/layout/PartialBanner";
 import TabPage from "@/components/pages/TabPage";
 import { ArrowRightIcon } from "@heroicons/react/outline";
-import Image from "next/image";
-import { memo, useState, useRef, useEffect } from "react";
+import { useEffect } from "react";
 import { getCookie } from 'cookies-next';
-import { keys } from "lodash";
 import { fetchUser } from "@/lib/auth/fetch";
-import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-//import db from "/lib/serverApp";
 
 
-
-export default function Programs() {
-  let userinfo;
-  let username;
-  let uid;
-  let classesmap = {
-    "Fake (Math)":  'MMMwuzDS7C5M4wj1zwch',
-    "Fake (Phy)": 'LZ330xVM4h0jkijbSaho',
-  };
-  let selectchoice;
-  try {
-  userinfo = JSON.parse(getCookie('user'))
-  username = userinfo["name"]
-  uid = userinfo["uid"]
-  } catch {
-    username="Please Log In First!"
-    uid="Please Log In First!"
-  };
-  function createSelectItems() {
-    let toReturn = [];
-    toReturn.push((<option key={0} value={null}>choose a class</option>))
-    for (let i=1; i<Object.keys(classesmap).length+1; i++){
-      toReturn.push((<option key={i} value={Object.keys(classesmap)[i-1]}>{Object.keys(classesmap)[i-1]}</option>))
-    }
-    return toReturn;
+let userinfo : object;
+let username : string;
+let uid: string;
+let classesmap = {
+  "Fake (Math)":  'MMMwuzDS7C5M4wj1zwch',
+  "Fake (Phy)": 'LZ330xVM4h0jkijbSaho',
+};
+let selectchoice = "";
+try {
+userinfo = JSON.parse(getCookie('user').toString())
+username = userinfo["name"]
+uid = userinfo["uid"]
+} catch {
+  username="Please Log In First!"
+  uid="Please Log In First!"
+};
+function createSelectItems() {
+  let toReturn = [];
+  toReturn.push((`<option key={0} value={null}>choose a class</option>`));
+  for (let i=1; i<Object.keys(classesmap).length+1; i++){
+    toReturn.push((`<option key={i} value={Object.keys(classesmap)[i-1]}>{Object.keys(classesmap)[i-1]}</option>`));
+  }
+  return toReturn;
 } 
 const handleCRegistration = async () => {
-    /*await fetchUser("PUT", uid, {
-      classes: ['nameofclass'],//document.getElementById("class1").value,
-    })*/
-    userinfo.classes.push(selectchoice)
-    await fetchUser("PUT", uid, {
-      name:username,
-      profileUrl: "/avatar.svg",
-      classes: userinfo.classes,
-      role: "student",
-    });
-    //await db.collection(uid).doc(key).update(data);
-    console.log('reached')
-  
+  /*await fetchUser("PUT", uid, {
+    classes: ['nameofclass'],//document.getElementById("class1").value,
+  })*/
+  userinfo.classes.push(selectchoice)
+  await fetchUser("PUT", uid, {
+    name:username,
+    profileUrl: "/avatar.svg",
+    classes: userinfo.classes,
+    role: "student",
+  });
+  //await db.collection(uid).doc(key).update(data);
+  console.log('reached')
+
 }
 const UPDATECHOICE = () => {
-  useEffect(()=>{
-    selectchoice = document.getElementById("class1").value
-  }, [])
+useEffect(()=>{
+  selectchoice = document.getElementById("class1").value
+}, [])
 }
 
-
+export default function Programs() {
   return (
-    <Container title="Class Registration">
+    <Container title="Class Registration Page">
       <PartialBanner
         title="Sign up for our courses!"
         subheader="Join in on the interactive STEM learning experience"
@@ -109,7 +98,7 @@ const UPDATECHOICE = () => {
       <h1 className="text-center font-display text-4xl font-bold mb-5">
         What We Teach
       </h1>
-      <div className="">
+      <div>
         <TabPage />
       </div>
     </Container>
