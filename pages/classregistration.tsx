@@ -8,10 +8,10 @@ import { getCookie } from 'cookies-next';
 import { fetchUser } from "@/lib/auth/fetch";
 
 
-let userinfo;
-let username;
-let uid;
-let classesmap = {
+var userinfo = {};
+var username = "";
+var uid = "";
+var classesmap = {
   "Fake (Math)":  'MMMwuzDS7C5M4wj1zwch',
   "Fake (Phy)": 'LZ330xVM4h0jkijbSaho',
 };
