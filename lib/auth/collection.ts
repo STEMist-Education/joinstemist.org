@@ -6,7 +6,7 @@ export const getData = async<DataValue>(key: string, collection: string): Promis
 };
 
 export const addData = async<DataValue>(
-  data: DataValue,
+  data: Partial<DataValue>,
   key: string,
   collection: string
 ): Promise<void> => {
