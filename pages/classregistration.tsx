@@ -80,7 +80,7 @@ const UPDATECHOICE = () => {
       <center>
       <div>
       <form>
-      <label for="user">Username: </label><br></br>
+      <label htmlFor="user">Username: </label><br></br>
         <input type="text" id="user" name="user" disabled={true} value={username}/><br></br><br></br>
         <label htmlFor="email">UID (do not share):  </label><br></br>
         <input type="text" id="user" name="user" disabled={true} value={uid}/><br></br><br></br>
