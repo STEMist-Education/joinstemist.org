@@ -40,7 +40,9 @@ const config = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  ignoreBuildErrors: true,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({

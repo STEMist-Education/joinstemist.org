@@ -16,14 +16,26 @@ var classesmap = {
   "Fake (Phy)": 'LZ330xVM4h0jkijbSaho',
 };
 let selectchoice = "";
-try {
+/*try {
 userinfo = JSON.parse(getCookie('user').toString())
 username = userinfo["name"]
 uid = userinfo["uid"]
 } catch {
   username="Please Log In First!"
   uid="Please Log In First!"
-};
+};*/
+try {
+if (getCookie('user')!==null) {
+  userinfo = JSON.parse(getCookie('user').toString())
+  username = userinfo["name"]
+  uid = userinfo["uid"]
+} else {
+  username="Please Log In First!"
+  uid="Please Log In First!"
+}} catch {
+  username="Please Log In First!"
+  uid="Please Log In First!"
+}
 function createSelectItems() {
   let toReturn = [];
   toReturn.push((`<option key={0} value={null}>choose a class</option>`));
