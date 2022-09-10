@@ -38,9 +38,9 @@ if (getCookie('user')!==null) {
 }
 function createSelectItems() {
   let toReturn = [];
-  toReturn.push((`<option key={0} value={null}>choose a class</option>`));
+  toReturn.push((<option key={0} value={null}>choose a class</option>));
   for (let i=1; i<Object.keys(classesmap).length+1; i++){
-    toReturn.push((`<option key={i} value={Object.keys(classesmap)[i-1]}>{Object.keys(classesmap)[i-1]}</option>`));
+    toReturn.push((<option key={i} value={Object.keys(classesmap)[i-1]}>{Object.keys(classesmap)[i-1]}</option>));
   }
   return toReturn;
 } 
