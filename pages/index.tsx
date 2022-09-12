@@ -26,11 +26,27 @@ export default function Index() {
           </span>
           <div className="flex justify-start flex-wrap sm:gap-3 gap-1 text-lg whitespace-nowrap">
             <Button
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdC5bo5-MlwWgbOC-ZnoU4-UFztSLbVYOD3z_nWOa6LeCF0QQ/viewform"
+              backgroundColor="bg-gradient-to-r from-steve-red to-steve-purple !py-1 !px-3"
+              textColor="text-white"
+            >
+              Apply to join our team! {" "}
+              <ArrowRightIcon className="h-4 w-4 inline-block" />
+            </Button>
+            <Button
               href="/programs"
               backgroundColor="bg-gradient-to-r from-steve-red to-steve-purple !py-1 !px-3"
               textColor="text-white"
             >
-              Team Applications{" "}
+              Register for a class or workshop {" "}
+              <ArrowRightIcon className="h-4 w-4 inline-block" />
+            </Button>
+            <Button
+              href="/about/contact"
+              backgroundColor="bg-gradient-to-r from-steve-red to-steve-purple !py-1 !px-3"
+              textColor="text-white"
+            >
+              Contact Us {" "}
               <ArrowRightIcon className="h-4 w-4 inline-block" />
             </Button>
             </div>

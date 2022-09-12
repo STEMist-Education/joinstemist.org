@@ -42,7 +42,7 @@ export default function Homepage() {
 
         <br></br><br></br>
         <Button
-              href="https://www.youtube.com/channel/UCp-9KJgj_clivoncmg459dg"
+              href="/about/team"
               backgroundColor="bg-gradient-to-r from-steve-red to-steve-purple !py-1 !px-3"
               textColor="text-white"
             >
