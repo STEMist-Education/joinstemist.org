@@ -6,7 +6,8 @@ import { ArrowRightIcon } from "@heroicons/react/outline";
 import { useEffect } from "react";
 import { getCookie } from 'cookies-next';
 import { fetchUser } from "@/lib/auth/fetch";
-
+import {updateData, getData} from "/lib/auth/collection"
+import useSWR from 'swr'
 
 var userinfo = {};
 var username = "";
