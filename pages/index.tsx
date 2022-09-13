@@ -25,7 +25,7 @@ export default function Index() {
             <div>Welcome to STEMist Education, a 501(c)3 nonprofit</div>
           </span>
           <div className="flex justify-start flex-wrap sm:gap-3 gap-1 text-lg whitespace-nowrap">
-            <Button
+            {/*<Button
               href="https://docs.google.com/forms/d/e/1FAIpQLSdC5bo5-MlwWgbOC-ZnoU4-UFztSLbVYOD3z_nWOa6LeCF0QQ/viewform"
               backgroundColor="bg-gradient-to-r from-steve-red to-steve-purple !py-1 !px-3"
               textColor="text-white"
@@ -48,7 +48,7 @@ export default function Index() {
             >
               Contact Us {" "}
               <ArrowRightIcon className="h-4 w-4 inline-block" />
-            </Button>
+  </Button>*/}
             </div>
             </div>
           {/* <div className="flex sm:flex-row flex-col px-5 gap-2 sm:px-10 md:px-20 sm:gap-10">
