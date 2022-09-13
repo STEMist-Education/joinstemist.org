@@ -51,7 +51,7 @@ export default function Homepage() {
             </Button>
       </HomeSection>
       <HomeSection
-        bgtheme={"white"} 
+        bgtheme={"black"} 
         title="STEMist Classes"
         image="/home/reshape.png"
         side="right"
@@ -73,7 +73,7 @@ export default function Homepage() {
             </Button>
       </HomeSection>
       <HomeSection
-        bgtheme={"black"}
+        bgtheme={"white"}
         title="STEMist Hacks"
         image="/home/hacks.jpeg"
         side="left"
@@ -95,7 +95,7 @@ export default function Homepage() {
             </Button>
       </HomeSection>
       <HomeSection
-        bgtheme={"white"}
+        bgtheme={"black"}
         title="WEBS Studio"
         image="/home/webs.png"
         side="right"
