@@ -51,10 +51,13 @@ function createSelectItems() {
 
 export default function Programs() {
   const [value, setValue] = useState("");
+  const [emvalue, setEmValue] = useState("");
+  const [nvalue, setnValue] = useState("");
   async function useHandleCRegistration() {
     var classes_copy = JSON.parse(JSON.stringify(userinfo["classes"]))
     classes_copy.push(classesmap[value])
-    var query = JSON.stringify({classes:classes_copy, uid:uid})
+    //console.log({classes:classes_copy, uid:uid, username:username, email:emvalue})
+    var query = JSON.stringify({classes:classes_copy, uid:uid, username:username, email:emvalue, classes:classes_copy, name:nvalue})
     //setCookie("crquery", {classes:userinfo["classes"], uid:uid})
     await fetch(`/api/classadd/`, {
       method: 'POST',
@@ -85,9 +88,13 @@ export default function Programs() {
         <label htmlFor="email">UID (do not share):  </label><br></br>
         <input type="text" id="user" name="user" disabled={true} value={uid}/><br></br><br></br>
         <label htmlFor="email">Email Address: </label><br></br>
-        <input type="text" id="email" name="email" /><br></br><br></br>
+        <input type="text" id="email" name="email" value={emvalue} onChange={(e) => {
+          setEmValue(e.target.value);
+        }}/><br></br><br></br>
         <label htmlFor="fullname">Full name: </label><br></br>
-        <input type="text" id="fullname" name="fullname" /><br></br><br></br>
+        <input type="text" id="fullname" name="fullname" value={nvalue} onChange={(e) => {
+          setnValue(e.target.value);
+        }}/><br></br><br></br>
         <label htmlFor="class1">Class: </label>
         <select id="class1" name="class1" value={value} onChange={(e) => {
           setValue(e.target.value);
