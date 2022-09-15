@@ -1,14 +1,11 @@
 import { getData, updateData } from "@/lib/auth/collection";
 import { NextApiHandler } from "next";
 import StudentData from "@/lib/types/StudentData";
+import { useRouter } from 'next/router'
 
 const handler: NextApiHandler = async (req, res) => {
-    if (req.query.class_id) {
-      const data = await updateData<StudentData>(req.query.dat as {}, req.query.uid as string, 'users');
-      return res.json(data);
-    } else {
-      return res.redirect("/auth/login");
-    }
+      const data = await updateData<StudentData>({classes:req.body.classes}, req.body.uid as string, 'users');
+      return res.json({});
   res.status(405).send("Method Not Allowed");
 };
 

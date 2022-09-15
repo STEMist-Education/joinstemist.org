@@ -3,11 +3,10 @@ import Container from "@/components/layout/Container";
 import PartialBanner from "@/components/layout/PartialBanner";
 import TabPage from "@/components/pages/TabPage";
 import { ArrowRightIcon } from "@heroicons/react/outline";
-import { useEffect } from "react";
-import { getCookie } from 'cookies-next';
-import { fetchUser } from "@/lib/auth/fetch";
-import {updateData, getData} from "/lib/auth/collection"
-import useSWR from 'swr'
+import { useEffect, useState } from "react";
+import { getCookie, setCookie } from 'cookies-next';
+import useSWR from 'swr';
+
 
 var userinfo = {};
 var username = "";
@@ -16,6 +15,8 @@ var classesmap = {
   "Fake (Math)":  'MMMwuzDS7C5M4wj1zwch',
   "Fake (Phy)": 'LZ330xVM4h0jkijbSaho',
 };
+
+const fetcher = (url) => fetch(url).then((res) => res.json())
 let selectchoice = "";
 /*try {
 userinfo = JSON.parse(getCookie('user').toString())
@@ -45,28 +46,25 @@ function createSelectItems() {
   }
   return toReturn;
 } 
-const handleCRegistration = async () => {
-  /*await fetchUser("PUT", uid, {
-    classes: ['nameofclass'],//document.getElementById("class1").value,
-  })*/
-  userinfo.classes.push(selectchoice)
-  await fetchUser("PUT", uid, {
-    name:username,
-    profileUrl: "/avatar.svg",
-    classes: userinfo.classes,
-    role: "student",
-  });
-  //await db.collection(uid).doc(key).update(data);
-  console.log('reached')
 
-}
-const UPDATECHOICE = () => {
-useEffect(()=>{
-  selectchoice = document.getElementById("class1").value
-}, [])
-}
+
 
 export default function Programs() {
+  const [value, setValue] = useState("");
+  async function useHandleCRegistration() {
+    var classes_copy = JSON.parse(JSON.stringify(userinfo["classes"]))
+    classes_copy.push(classesmap[value])
+    var query = JSON.stringify({classes:classes_copy, uid:uid})
+    //setCookie("crquery", {classes:userinfo["classes"], uid:uid})
+    await fetch(`/api/classadd/`, {
+      method: 'POST',
+    headers: {
+      Accept: 'application.json',
+      'Content-Type': 'application/json'
+    },
+      body: query,
+    })
+  }
   return (
     <Container title="Class Registration Page">
       <PartialBanner
@@ -91,7 +89,9 @@ export default function Programs() {
         <label htmlFor="fullname">Full name: </label><br></br>
         <input type="text" id="fullname" name="fullname" /><br></br><br></br>
         <label htmlFor="class1">Class: </label>
-        <select id="class1" name="class1" onSelect={UPDATECHOICE}>
+        <select id="class1" name="class1" value={value} onChange={(e) => {
+          setValue(e.target.value);
+        }}>
         {createSelectItems()}
         </select><br></br><br></br>
         <Button
@@ -99,7 +99,7 @@ export default function Programs() {
             textColor="text-white text-xl"
             target="_blank"
             type="button"
-            onClick={handleCRegistration}
+            onClick={useHandleCRegistration}
           >
             Join Class!{" "}
             <ArrowRightIcon className="h-4 w-4 inline-block transform -rotate-45" />
