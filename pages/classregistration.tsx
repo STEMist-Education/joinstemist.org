@@ -67,6 +67,7 @@ export default function Programs() {
     },
       body: query,
     })
+    alert("Registration Succeeded\n\nPlease make sure to donate $10 upon signing up\n\nIf you do not receive a confirmation email within a few days, or have any questions, please email us at anemailaddress@joinstemist.org")
   }
   return (
     <Container title="Class Registration Page">
