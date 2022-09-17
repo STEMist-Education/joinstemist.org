@@ -50,19 +50,19 @@ export default function Dashboard(props: { user: StudentData }) {
           {queries.map(({ isSuccess, data }, index) => {
             return (
               isSuccess && (
-                <div
+                <Link
+                  href={`/classes/${props.user.classes[index]}`}
                   key={props.user.classes[index]}
-                  className="block p-4 max-w-[12rem] bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
                 >
-                  <Link href={`/classes/${props.user.classes[index]}`}>
+                  <a className="block p-4 max-w-[12rem] bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                     <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white w-max hover:underline cursor-pointer">
                       {data.name}
                     </h5>
-                  </Link>
-                  <p className="font-normal text-gray-700 dark:text-gray-400">
-                    {data.teacher}
-                  </p>
-                </div>
+                    <p className="font-normal text-gray-700 dark:text-gray-400">
+                      {data.teacher}
+                    </p>
+                  </a>
+                </Link>
               )
             );
           })}

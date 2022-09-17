@@ -1,10 +1,45 @@
+import { fetchClasses } from "@/lib/auth/fetch";
+import { useData } from "@/lib/hooks/useData";
+import Class from "@/lib/types/Class";
+import StudentData from "@/lib/types/StudentData";
 import { Dialog, Transition } from "@headlessui/react";
 import { ArrowRightIcon } from "@heroicons/react/outline";
-import { Fragment, useState } from "react";
+import { useFormik } from "formik";
+import { useRouter } from "next/router";
+import { Fragment, useEffect, useState } from "react";
+import SelectInputField from "../forms/SelectInputField";
 import Button from "./Button";
 
 export default function SignUpModal() {
   const [open, setOpen] = useState(false);
+  const [classes, setClasses] = useState<Class[]>([]);
+  const router = useRouter();
+
+  const user = useData();
+  useEffect(() => {
+    fetchClasses().then((res) => setClasses(res));
+  }, []);
+
+  const formik = useFormik({
+    initialValues: {
+      className: "",
+    },
+    onSubmit: async (values) => {
+      const res = await fetch("/api/classadd", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          uid: user.uid,
+          class_id: values.className,
+        }),
+      });
+      if (res.ok) {
+        router.push("/classes/" + values.className);
+      }
+    },
+  });
   return (
     <>
       <Button
@@ -55,8 +90,31 @@ export default function SignUpModal() {
                   Sign Up
                 </Dialog.Title>
                 <div className="mt-2">
-                  <p className={`text-sm`}>Placeholder stuff</p>
-                  <div className="text-sm text-black">Placeholder stuff</div>
+                  <form onSubmit={formik.handleSubmit}>
+                    <div className="mt-1">
+                      <SelectInputField
+                        labelName="Class"
+                        name="className"
+                        formik={formik}
+                      >
+                        <option value="">Select a class</option>
+                        {classes.map((c) => (
+                          <option key={c.uid} value={c.uid}>
+                            {c.name}
+                          </option>
+                        ))}
+                      </SelectInputField>
+                    </div>
+                    <div className="mt-1">
+                      <Button
+                        backgroundColor="bg-blue-500"
+                        textColor="text-white text-xl"
+                        type="submit"
+                      >
+                        Confirm Signup (PAYMENT HERE)
+                      </Button>
+                    </div>
+                  </form>
                 </div>
                 <div className="mt-1">
                   <Button

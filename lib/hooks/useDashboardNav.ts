@@ -28,18 +28,18 @@ export function useDashboardNav(user: StudentData) {
               via: "function",
               func: () => {},
               customProps: {
-                className: "cursor-auto",
+                className: "cursor-text",
               },
               image: user.profileUrl,
             },
             {
+              name: "Dashboard",
+              link: "/dashboard",
+              via: "link",
+            },
+            {
               name: "Class Registration",
               link: "/programs",
-              customProps: {
-                main: true,
-                color: "transparent",
-                textColor: "white",
-              },
               via: "link",
             },
             {
