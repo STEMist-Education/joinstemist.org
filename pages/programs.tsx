@@ -1,15 +1,31 @@
-import Button from "@/components/layout/Button";
 import Container from "@/components/layout/Container";
 import PartialBanner from "@/components/layout/PartialBanner";
+import SignUpModal from "@/components/layout/SignUpModal";
 import TabPage from "@/components/pages/TabPage";
-import { ArrowRightIcon } from "@heroicons/react/outline";
+import { useDashboardNav } from "@/lib/hooks/useDashboardNav";
+import { useData } from "@/lib/hooks/useData";
+import StudentData from "@/lib/types/StudentData";
+import { GetServerSideProps } from "next";
+import cookies from "next-cookies";
 import Image from "next/image";
 
-export default function Programs() {
+interface ProgramProps {
+  user: StudentData;
+}
+
+export default function Programs(props: ProgramProps) {
+  const user = useData(props.user!);
+  const nav = useDashboardNav(user);
+
   return (
-    <Container title="Class Registration">
+    <Container
+      title="Class Registration"
+      noNav
+      navTitle="Student Dashboard"
+      customNav={nav}
+    >
       <PartialBanner
-        title="2029 (Test) Class Registration"
+        title="Class Registration"
         subheader="Join in on the interactive STEM learning experience"
       />
       <h1 className="text-center font-display text-4xl font-bold mb-8">
@@ -32,15 +48,7 @@ export default function Programs() {
             14/24. Classes are 25 to 25.5 hours long and one unique class is
             offered; the Intro to Nothing course at $1,000,000 per week.
           </p>
-          <Button
-            href="/classregistration"
-            backgroundColor="bg-blue-500"
-            textColor="text-white text-xl"
-            target="_blank"
-          >
-            Sign Up Now!{" "}
-            <ArrowRightIcon className="h-4 w-4 inline-block transform -rotate-45" />
-          </Button>
+          <SignUpModal />
         </div>
       </div>
       <h1 className="text-center font-display text-4xl font-bold mb-5">
@@ -52,3 +60,23 @@ export default function Programs() {
     </Container>
   );
 }
+
+export const getServerSideProps: GetServerSideProps<ProgramProps> = async (
+  ctx
+) => {
+  const cookie = cookies(ctx).user! as Object;
+  if (cookie === undefined) {
+    return {
+      redirect: {
+        destination: "/auth/login",
+        permanent: false,
+      },
+    };
+  } else {
+  }
+  return {
+    props: {
+      user: cookie as StudentData,
+    },
+  };
+};

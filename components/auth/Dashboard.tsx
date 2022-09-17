@@ -9,51 +9,12 @@ import { useQueries, UseQueryResult } from "react-query";
 import Container from "@/components/layout/Container";
 import PartialBanner from "@/components/layout/PartialBanner";
 import Link from "next/link";
+import Button from "../layout/Button";
+import { ArrowRightIcon } from "@heroicons/react/outline";
+import { useDashboardNav } from "@/lib/hooks/useDashboardNav";
 
 export default function Dashboard(props: { user: StudentData }) {
-  const router: NextRouter = useRouter();
-  const dashboardNav = useMemo<NavLinks>(
-    () =>
-      props.user === null || props.user === undefined
-        ? [
-            {
-              name: "Login",
-              link: "/auth/login",
-              via: "link",
-            },
-            {
-              name: "Register",
-              link: "/auth/register",
-              via: "link",
-            },
-          ]
-        : [
-            {
-              name: `Logged in as ${props.user.name}`,
-              via: "function",
-              func: () => {},
-              customProps: {
-                className: "cursor-auto",
-              },
-              image: props.user.profileUrl,
-            },
-            {
-              name: "Logout",
-              func: async () => {
-                router.push("/");
-                Cookies.remove("user");
-                await signOut(getAuth());
-              },
-              customProps: {
-                main: true,
-                color: "red",
-                textColor: "white",
-              },
-              via: "function",
-            },
-          ],
-    [props.user, router]
-  );
+  const dashboardNav = useDashboardNav(props.user);
 
   const queries: UseQueryResult<Class, unknown>[] = useQueries(
     (typeof props.user.classes != "object" ? [] : props.user.classes).map(
@@ -77,19 +38,24 @@ export default function Dashboard(props: { user: StudentData }) {
       <PartialBanner title="Student Dashboard" />
       <div className="p-5">
         <h1 className="text-5xl">Welcome back {props.user.name}!</h1>
+        <Button
+          href="/programs"
+          backgroundColor="bg-blue-500"
+          textColor="text-white text-xl"
+        >
+          Sign Up Now!{" "}
+          <ArrowRightIcon className="h-4 w-4 inline-block transform -rotate-45" />
+        </Button>
         <div className="mt-10">
           {queries.map(({ isSuccess, data }, index) => {
             return (
               isSuccess && (
                 <div
                   key={props.user.classes[index]}
-                  className=
-                    "block p-4 max-w-[12rem] bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+                  className="block p-4 max-w-[12rem] bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
                 >
                   <Link href={`/classes/${props.user.classes[index]}`}>
-                    <h5
-                      className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white w-max hover:underline cursor-pointer"
-                    >
+                    <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white w-max hover:underline cursor-pointer">
                       {data.name}
                     </h5>
                   </Link>

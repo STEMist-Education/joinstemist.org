@@ -19,7 +19,7 @@ import { FirebaseError } from "firebase/app";
 import Google from "@/public/google.svg";
 import { useData } from "@/lib/hooks/useData";
 import { useRouter } from "next/router";
-import Link from 'next/link'
+import Link from "next/link";
 
 interface SignUpForm {
   email: string;
@@ -45,7 +45,7 @@ export default function SignUp() {
   const [image, setImage] = useState<string>("");
 
   const handleError = (e: FirebaseError) => {
-    console.error(JSON.stringify(e))
+    console.error(JSON.stringify(e));
     let code = e.code.substring(5).replace(/-/g, " ");
     code = code.charAt(0).toUpperCase() + code.slice(1);
     setMessage(code);
@@ -68,22 +68,21 @@ export default function SignUp() {
         role: "student",
       });
       const headers = new Headers({
-        'Content-Type': 'application/json'
-      })
+        "Content-Type": "application/json",
+      });
 
       const json = JSON.stringify({
         name: user.displayName!,
         role: "student",
         email: user.email,
-        lastSignIn: user.metadata.lastSignInTime
-      })
-      await fetch("/api/autoemailer", {body: json, headers})
+        lastSignIn: user.metadata.lastSignInTime,
+      });
+      await fetch("/api/autoemailer", { body: json, headers });
     } catch (error: any) {
       if (error.code) {
         handleError(error as FirebaseError);
       } else {
-        console.log("Firebase NOT Error" + JSON.stringify(error))
-        alert("Try Catch not working")
+        console.log("Firebase NOT Error" + error);
       }
     }
   }
@@ -126,17 +125,17 @@ export default function SignUp() {
           role: "student",
         });
         const headers = new Headers({
-        'Content-Type': 'application/json'
-      })
+          "Content-Type": "application/json",
+        });
 
-      const json = JSON.stringify({
-        name,
-        role: "student",
-        email: user.email!,
-        lastSignIn: user.metadata.lastSignInTime!
-      })
-        
-      await fetch("/api/autoemailer", {body: json, headers})
+        const json = JSON.stringify({
+          name,
+          role: "student",
+          email: user.email!,
+          lastSignIn: user.metadata.lastSignInTime!,
+        });
+
+        await fetch("/api/autoemailer", { body: json, headers });
         // setSubmitting(false);
       } catch (error) {
         handleError(error as FirebaseError);
@@ -207,8 +206,6 @@ export default function SignUp() {
                   <Image src={Google} alt="Google Logo" />
                   Login with Google
                 </button>
-
-                
               </div>
             </div>
           </form>
