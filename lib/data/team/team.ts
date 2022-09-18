@@ -4,7 +4,7 @@ import { ExtendedPerson } from "../../types";
 const people: ExtendedPerson[] = [
   {
     name: "Steve Yang",
-    officerRoles: ["President"],
+    officerRoles: ["President", "Director of Curriculum"],
     teacherRoles: ["Biology", "Physical Science"],
     curriculumRoles: {
       phys: ["Basic Chemistry", "Chemical Reactions", "Earth Science"],
@@ -92,8 +92,19 @@ const people: ExtendedPerson[] = [
     email: "snehilkakani@joinstemist.org",
   },
   {
+    name: "Abhiram Manuguri",
+    description:
+      "Abhiram Manuguri is known best for being passionate about astronomy, spends his free time researching random stars and noting down interesting objects, and is currently drafting a research paper on a double star system.",
+    image: resolveTeamImage("Abhiram Manuguri"),
+    officerRoles: ["Vice Director of Curriculum"],
+    teacherRoles: ["Physical Science"],
+    curriculumRoles: {
+      phys: ["Astronomy"],
+    },
+  },
+  {
     name: "Selena Yang",
-    officerRoles: ["Curriculum Director"],
+    officerRoles: ["Curriculum Sub-Director"],
     image: resolveTeamImage("Selena Yang"),
     teacherRoles: ["Head of Biology", "Math", "Biology"],
     curriculumRoles: {
@@ -114,7 +125,7 @@ const people: ExtendedPerson[] = [
   },
   {
     name: "Anish Bhethanabotla",
-    officerRoles: ["Curriculum Director"],
+    officerRoles: ["Curriculum Sub-Director"],
     teacherRoles: ["Head of Physical Science", "Physical Science"],
     curriculumRoles: {
       phys: ["Head", "Electricity and Magnetism", "Stellar Evolution"],
@@ -135,7 +146,7 @@ const people: ExtendedPerson[] = [
   },
   {
     name: "Sanya Badhe",
-    officerRoles: ["Curriculum Director"],
+    officerRoles: ["Curriculum Sub-Director"],
     teacherRoles: ["Head of Math", "Math"],
     curriculumRoles: {
       math: ["Head", "Algebra", "Geometry", "Advanced Geometry"],
@@ -161,7 +172,7 @@ const people: ExtendedPerson[] = [
   },
   {
     name: "Shanker Ram",
-    officerRoles: ["Curriculum Director"],
+    officerRoles: ["Curriculum Sub-Director"],
     teacherRoles: ["Head of Computer Science", "Computer Science"],
     curriculumRoles: {
       cs: ["Head", "Python"],
@@ -213,10 +224,10 @@ const people: ExtendedPerson[] = [
   },
   {
     name: "Rohan Fernandes",
-    teamRoles: ["Intern", "Technology", "Website", "Hackathon"],
-    teacherRoles: ["Computer Science", "Intern"],
+    teamRoles: ["Technology", "Website", "Hackathon"],
+    teacherRoles: ["Computer Science"],
     curriculumRoles: {
-      cs: ["Intern", "Python", "Javascript"],
+      cs: ["Python", "Javascript"],
     },
     image: resolveTeamImage("Rohan Fernandes"),
     description:
@@ -260,7 +271,7 @@ const people: ExtendedPerson[] = [
   },
   {
     name: "Sarvesh Madullapalli",
-    teamRoles: ["Intern", "Technology", "Hackathon"],
+    teamRoles: ["Technology", "Hackathon"],
     image: resolveTeamImage("Sarvesh Madullapalli"),
     description:
       "Sarvesh knows Python, Java, web development, and some C++. He has won 4 hackathons and is a very good team leader. He knows and contributes to almost all popular libraries, specializing in Python.",
@@ -273,9 +284,9 @@ const people: ExtendedPerson[] = [
   },
   {
     name: "Vyaas Baskar",
-    teacherRoles: ["Physical Science", "Intern"],
+    teacherRoles: ["Physical Science"],
     curriculumRoles: {
-      phys: ["Intern", "Electricity and Magnetism"],
+      phys: ["Electricity and Magnetism"],
     },
     image: resolveTeamImage("Vyaas Baskar"),
     description:
@@ -289,9 +300,9 @@ const people: ExtendedPerson[] = [
   },
   {
     name: "Chaas Kandregula",
-    teacherRoles: ["Biology", "Intern"],
+    teacherRoles: ["Biology"],
     curriculumRoles: {
-      bio: ["Intern", "Anatomy and Physiology"],
+      bio: ["Anatomy and Physiology"],
     },
     image: resolveTeamImage("Chaas Kandregula"),
     description:
@@ -359,7 +370,7 @@ const people: ExtendedPerson[] = [
   },
   // {
   //   name: "Yash Singh",
-  //   teamRoles: ["Technology", "Website", "Intern"],
+  //   teamRoles: ["Technology", "Website", ],
   //   description:
   //     "Yash Singh is a computer science and math fanatic who codes in his free time and can often be found in hackathons. He likes to go on hikes and play basketball when he is not studying.",
   //   image: resolveTeamImage("Yash Singh"),
@@ -382,23 +393,14 @@ const people: ExtendedPerson[] = [
     },
     qualifications: ["Multiple Time Hackathon Winner"],
   },
-  {
-    name: "Abhiram Manuguri",
-    description:
-      "Abhiram Manuguri is known best for being passionate about astronomy, spends his free time researching random stars and noting down interesting objects, and is currently drafting a research paper on a double star system.",
-    image: resolveTeamImage("Abhiram Manuguri"),
-    teacherRoles: ["Physical Science"],
-    curriculumRoles: {
-      phys: ["Astronomy"],
-    },
-  },
+
   {
     name: "Rohil Gupta",
-    teacherRoles: ["Intern", "Biology"],
+    teacherRoles: ["Biology"],
     description:
       "Rohil Gupta is a biology enthusiast, inspired by his mom, who is a doctor, and his brother, who worked on research for cancer treatment. In his free time, he loves to play many instruments, and his dog, Bruno.",
     curriculumRoles: {
-      bio: ["Intern"],
+      bio: [],
     },
     image: resolveTeamImage("Rohil Gupta"),
   },
