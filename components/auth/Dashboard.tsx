@@ -21,8 +21,11 @@ export default function Dashboard(props: { user: StudentData }) {
       (id) => ({
         queryKey: ["user", id],
         queryFn: async () => {
+          try {
           const res = await fetch("/api/class/?class_id=" + id);
-          return res.json();
+          return res.json();} catch {
+            return {}
+          }
         },
       })
     )
@@ -37,7 +40,7 @@ export default function Dashboard(props: { user: StudentData }) {
     >
       <PartialBanner title="Student Dashboard" />
       <div className="p-5">
-        <h1 className="text-5xl">Welcome back {props.user.name}!</h1>
+        <h1 className="text-5xl">Welcome back {props.user.name}!</h1><br></br><br></br>
         <Button
           href="/programs"
           backgroundColor="bg-blue-500"

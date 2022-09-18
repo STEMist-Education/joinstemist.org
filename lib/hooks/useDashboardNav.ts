@@ -36,11 +36,21 @@ export function useDashboardNav(user: StudentData) {
               name: "Dashboard",
               link: "/dashboard",
               via: "link",
+              customProps: {
+                main: true,
+                color: "blue-500 bg-opacity-80 hover:bg-opacity-90",
+                textColor: "white",
+              },
             },
             {
               name: "Class Registration",
               link: "/programs",
               via: "link",
+              customProps: {
+                main: true,
+                color: "blue-500 bg-opacity-80 hover:bg-opacity-90",
+                textColor: "white",
+              },
             },
             {
               name: "Logout",

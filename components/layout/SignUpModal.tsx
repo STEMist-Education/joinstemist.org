@@ -115,7 +115,7 @@ export default function SignUpModal() {
                       </Button>
                     </div>
                   </form>
-                </div>
+                </div><br></br>
                 <div className="mt-1">
                   <Button
                     backgroundColor="bg-blue-500"
