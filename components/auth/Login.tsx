@@ -116,14 +116,14 @@ export default function Login() {
                 >
                   Log In
                 </button>
-                <button
+                {/*<button
                   className="relative w-full rounded-none border border-transparent bg-black bg-opacity-10 py-2 px-2 text-sm font-medium text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 flex items-center gap-2 justify-center"
                   onClick={handleGoogleClick}
                   type="button"
                 >
                   <Image src={Google} alt="Google Logo" />
                   Login with Google
-                </button>
+              </button>*/}
                 <Link href="/auth/register">
               <button
                   className="relative w-full rounded-none border border-transparent bg-black bg-opacity-10 py-2 px-2 text-sm font-medium text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 flex items-center gap-2 justify-center"
