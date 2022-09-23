@@ -35,10 +35,10 @@ export default function Dashboard(props: { user: StudentData }) {
     <Container
       title="Dashboard"
       noNav
-      navTitle="Student Dashboard"
+      navTitle={(props.user.role+" dashboard").toUpperCase(   )}
       customNav={dashboardNav}
     >
-      <PartialBanner title="Student Dashboard" />
+      <PartialBanner title={(props.user.role.toUpperCase()+" Dashboard")} />
       <div className="p-5">
         <h1 className="text-5xl">Welcome back {props.user.name}!</h1><br></br><br></br>
         <Button

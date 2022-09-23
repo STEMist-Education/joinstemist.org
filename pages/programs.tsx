@@ -21,7 +21,7 @@ export default function Programs(props: ProgramProps) {
     <Container
       title="Class Registration"
       noNav
-      navTitle="Student Dashboard"
+      navTitle={(props.user.role+" dashboard").toUpperCase(   )}
       customNav={nav}
     >
       <PartialBanner

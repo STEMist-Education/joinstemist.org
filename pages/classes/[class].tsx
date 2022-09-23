@@ -18,7 +18,7 @@ export default function Class(props: { class: Class; user: StudentData }) {
     <Container
       title={props.class.name}
       noNav
-      navTitle="Student Dashboard"
+      navTitle={(props.user.role+" dashboard").toUpperCase(   )}
       customNav={nav}
     >
       <PartialBanner
