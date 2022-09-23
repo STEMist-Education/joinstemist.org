@@ -10,7 +10,7 @@ import type Class from "@/lib/types/Class";
 import StudentData from "@/lib/types/StudentData";
 import { GetServerSideProps } from "next";
 import cookies from "next-cookies";
-import { useRouter } from 'next/router'
+
 
 export default function Class(props: { class: Class; user: StudentData }) {
   const nav = useDashboardNav(props.user);
