@@ -1,4 +1,5 @@
 import ClassPosts from "@/components/auth/ClassPosts";
+import TeaPostMake from "@/components/auth/TeaPostMake";
 import VideoPosts from "@/components/auth/VideoPosts";
 import Container from "@/components/layout/Container";
 import CTABanner from "@/components/layout/CTABanner";
@@ -9,6 +10,7 @@ import type Class from "@/lib/types/Class";
 import StudentData from "@/lib/types/StudentData";
 import { GetServerSideProps } from "next";
 import cookies from "next-cookies";
+import { useRouter } from 'next/router'
 
 export default function Class(props: { class: Class; user: StudentData }) {
   const nav = useDashboardNav(props.user);
@@ -24,6 +26,8 @@ export default function Class(props: { class: Class; user: StudentData }) {
         title={props.class.name}
         subheader={<div className="mt-4">Taught by {props.class.teacher}</div>}
       />
+      {props.user.role=="teacher" && TeaPostMake(props.class.uid, props.class)}
+      <br></br>
       <ClassPosts posts={props.class.posts.reverse()} />
       <VideoPosts videos={props.class.videos} />
     </Container>
