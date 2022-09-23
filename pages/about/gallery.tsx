@@ -108,7 +108,12 @@ const photos: Photo[] = [
   width: 2,
   height: 1,
 }));
-
+function defaultstringify_photo(param:string|undefined) {
+  if (param===undefined) {
+    return ''
+  } 
+  return defaultstringify_photo.toString()
+}
 export default function About() {
   const [open, setOpen] = useState<boolean>(false);
   const [currentPhoto, setCurrentPhoto] = useState<Photo>(photos[0]);
@@ -185,7 +190,7 @@ export default function About() {
                 <div>
                   <div className="m-1 relative w-full">
                     <FutureImage
-                      alt={currentPhoto.alt}
+                      alt={defaultstringify_photo(currentPhoto.alt)}
                       src={currentPhoto.src}
                       height={0}
                       width={672}

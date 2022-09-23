@@ -4,7 +4,7 @@ import { ArrowRightIcon } from "@heroicons/react/outline";
 import Button from "@/components/layout/Button";
 import { useRouter } from 'next/router'
 
-export default function TeaPostMake(cuid:string, classI) {
+export default function TeaPostMake(cuid:string, classI:Class) {
     const [mtit, setMtit] = useState("Untitled Message")
     const [parg, setParg] = useState("Start typing here...")
     async function HandleCPost() {
