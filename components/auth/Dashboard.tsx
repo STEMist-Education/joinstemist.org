@@ -18,12 +18,19 @@ export default function Dashboard(props: { user: StudentData }) {
 
   const queries: UseQueryResult<Class, unknown>[] = useQueries(
     (typeof props.user.classes != "object" ? [] : props.user.classes).map(
-      (id) => ({
+      (i, id) => ({
         queryKey: ["user", id],
         queryFn: async () => {
           try {
-          const res = await fetch("/api/class/?class_id=" + id);
-          return res.json();} catch {
+            console.log("The id of element: " + i + " is " + id)
+            const res = await fetch("/api/class/?class_id=" + i);
+            console.log("response of " + res.statusText + "from element " + i)
+            let ares = res.clone()
+            let data = await ares.json();
+            console.log("The data received from element " + i + " is " + JSON.stringify(data))
+            return res.json();
+          } catch (err) {
+            console.error(err)
             return {}
           }
         },
@@ -35,12 +42,14 @@ export default function Dashboard(props: { user: StudentData }) {
     <Container
       title="Dashboard"
       noNav
-      navTitle={(props.user.role+" dashboard").toUpperCase(   )}
+      navTitle={(props.user.role + " dashboard").toUpperCase()}
       customNav={dashboardNav}
     >
-      <PartialBanner title={(props.user.role.toUpperCase()+" Dashboard")} />
+      <PartialBanner title={props.user.role.toUpperCase() + " Dashboard"} />
       <div className="p-5">
-        <h1 className="text-5xl">Welcome back {props.user.name}!</h1><br></br><br></br>
+        <h1 className="text-5xl">Welcome back {props.user.name}!</h1>
+        <br></br>
+        <br></br>
         <Button
           href="/programs"
           backgroundColor="bg-blue-500"
