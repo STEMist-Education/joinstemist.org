@@ -62,6 +62,7 @@ export default function Dashboard(props: { user: StudentData }) {
           {queries.map(({ isSuccess, data }, index) => {
             return (
               isSuccess && (
+                <div>
                 <Link
                   href={`/classes/${props.user.classes[index]}`}
                   key={props.user.classes[index]}
@@ -75,6 +76,8 @@ export default function Dashboard(props: { user: StudentData }) {
                     </p>
                   </a>
                 </Link>
+                <br></br>
+                </div>
               )
             );
           })}
