@@ -7,6 +7,7 @@ export default function Login() {
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  try {
   const user = cookies(ctx).user as any;
   if (user !== undefined) {
     return {
@@ -15,6 +16,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
         permanent: false,
       },
     };
+  } } catch {
+    
   }
   return {
     props: {},

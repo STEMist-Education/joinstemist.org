@@ -1,3 +1,4 @@
+import Class from "../types/Class";
 import StudentData from "../types/StudentData";
 
 export const fetchUser = async (
@@ -34,4 +35,13 @@ export const fetchUser = async (
     }
   } catch {}
   return {};
+};
+
+export const fetchClasses = async (): Promise<Class[]> => {
+  try {
+    const res = await fetch(`/api/classes`);
+    const json = await res.json();
+    return json;
+  } catch {}
+  return [] as Class[];
 };

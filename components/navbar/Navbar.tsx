@@ -96,7 +96,7 @@ export default function Navbar({
                           {navLink.name}
                         </NavLink>
                       ))}
-                      {!hacks && (
+                      {/*!hacks && (
                         <NavLink
                           via={"link"}
                           main
@@ -108,7 +108,7 @@ export default function Navbar({
                           <ArrowLeftIcon className="h-5 w-5 inline-block" />
                           Back to STEMist
                         </NavLink>
-                      )}
+                      )*/}
                     </ul>
                   </div>
                 )}
@@ -233,7 +233,7 @@ export default function Navbar({
                           </Fragment>
                         )
                       )}
-                      {noNav && !hacks && (
+                      {/*noNav && !hacks && (
                         <>
                           <div className="h-2"></div>
                           <NavLink
@@ -248,7 +248,7 @@ export default function Navbar({
                             Back to STEMist
                           </NavLink>
                         </>
-                      )}
+                      )*/}
                     </ul>
                   </div>
                 )}

@@ -6,6 +6,7 @@ interface Class {
   name: string;
   teacher: string;
   videos: string[];
+  uid: string;
 }
 
 export default Class;

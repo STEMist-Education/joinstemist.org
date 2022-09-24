@@ -10,8 +10,8 @@ specifiers:
   '@types/lodash': ^4.14.182
   '@types/node': ^18.6.4
   '@types/nprogress': ^0.2.0
-  '@types/react': ^18.0.14
-  '@types/react-dom': ^18.0.5
+  '@types/react': ^18.0.6
+  '@types/react-dom': ^18.0.6
   '@types/smoothscroll-polyfill': ^0.3.1
   '@types/uuid': ^8.3.4
   autoprefixer: 10.4.7
@@ -41,6 +41,7 @@ specifiers:
   react-spring-carousel: ^2.0.19
   sharp: ^0.30.7
   smoothscroll-polyfill: ^0.4.4
+  swr: 1.2.0
   tailwindcss: ^3.1.8
   typed.js: ^2.0.12
   typescript: ^4.7.4
@@ -75,6 +76,7 @@ dependencies:
   react-spring-carousel: 2.0.19_vknc7bavbbl7l5br6s3mfkbk3y
   sharp: 0.30.7
   smoothscroll-polyfill: 0.4.4
+  swr: 1.2.0_react@18.2.0
   typed.js: 2.0.12
   typescript: 4.7.4
   use-count-up: 3.0.1_react@18.2.0
@@ -8235,6 +8237,14 @@ packages:
     resolution: {integrity: sha512-ZC3r8Hu1y0dIThzsGw0RLZplnX9yXwfItcvaIzJc2VQVi8TGyGDlu92syMB5ulybfvGLHAI5Ghzlk23UBPF8xg==}
     peerDependencies:
       react: '>=17.0'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
+  /swr/1.2.0_react@18.2.0:
+    resolution: {integrity: sha512-C3IXeKOREn0jQ1ewXRENE7ED7jjGbFTakwB64eLACkCqkF/A0N2ckvpCTftcaSYi5yV36PzoehgVCOVRmtECcA==}
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 18.2.0
     dev: false

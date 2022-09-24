@@ -37,6 +37,12 @@ const config = {
       allowFutureImage: true,
     },
   },
+  // eslint: {
+  //   ignoreDuringBuilds: true,
+  // },
+  // typescript: {
+  //   ignoreBuildErrors: true,
+  // },
 };
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({

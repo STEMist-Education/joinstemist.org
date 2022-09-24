@@ -106,18 +106,7 @@ export const navLinks: NavLink[] = [
     via: "link",
   },
   {
-    name: "Class Registration",
-    link: "/programs",
-    class: "projects",
-    via: "link",
-    customProps: {
-      main: true,
-      color: "transparent",
-      textColor: "white",
-    },
-  },
-  {
-    name: "Dashboard",
+    name: "Login/Register",
     link: "/dashboard",
     customProps: {
       main: true,

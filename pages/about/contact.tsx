@@ -12,9 +12,10 @@ const MemoedInputField = memo(InputField);
 
 export default function Contact() {
   const [submit, setSubmit] = useState<ReactElement>(<h1>Submit</h1>);
-  useEffect(() => {
+  return clearTimeout
+  /*useEffect(() => {
     return clearTimeout;
-  }, []);
+  }, []);*/
 
   const formik = useFormik({
     initialValues: {

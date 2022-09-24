@@ -26,7 +26,7 @@ const handler: NextApiHandler = async (req, res) => {
         {
           name: body.name,
           profileUrl: body.profileUrl,
-          classes: [],
+          classes: ["generalinfo"],
           uid: body.uid,
           role: "student",
         },
@@ -54,6 +54,6 @@ const handler: NextApiHandler = async (req, res) => {
     }
   }
   res.status(405).send("Method Not Allowed");
-};
+}; 
 
 export default handler;

@@ -9,59 +9,23 @@ import { useQueries, UseQueryResult } from "react-query";
 import Container from "@/components/layout/Container";
 import PartialBanner from "@/components/layout/PartialBanner";
 import Link from "next/link";
+import Button from "../layout/Button";
+import { ArrowRightIcon } from "@heroicons/react/outline";
+import { useDashboardNav } from "@/lib/hooks/useDashboardNav";
 
 export default function Dashboard(props: { user: StudentData }) {
-  const router: NextRouter = useRouter();
-  const dashboardNav = useMemo<NavLinks>(
-    () =>
-      props.user === null || props.user === undefined
-        ? [
-            {
-              name: "Login",
-              link: "/auth/login",
-              via: "link",
-            },
-            {
-              name: "Register",
-              link: "/auth/register",
-              via: "link",
-            },
-          ]
-        : [
-            {
-              name: `Logged in as ${props.user.name}`,
-              via: "function",
-              func: () => {},
-              customProps: {
-                className: "cursor-auto",
-              },
-              image: props.user.profileUrl,
-            },
-            {
-              name: "Logout",
-              func: async () => {
-                router.push("/");
-                Cookies.remove("user");
-                await signOut(getAuth());
-              },
-              customProps: {
-                main: true,
-                color: "red",
-                textColor: "white",
-              },
-              via: "function",
-            },
-          ],
-    [props.user, router]
-  );
+  const dashboardNav = useDashboardNav(props.user);
 
   const queries: UseQueryResult<Class, unknown>[] = useQueries(
     (typeof props.user.classes != "object" ? [] : props.user.classes).map(
       (id) => ({
         queryKey: ["user", id],
         queryFn: async () => {
+          try {
           const res = await fetch("/api/class/?class_id=" + id);
-          return res.json();
+          return res.json();} catch {
+            return {}
+          }
         },
       })
     )
@@ -71,32 +35,37 @@ export default function Dashboard(props: { user: StudentData }) {
     <Container
       title="Dashboard"
       noNav
-      navTitle="Student Dashboard"
+      navTitle={(props.user.role+" dashboard").toUpperCase(   )}
       customNav={dashboardNav}
     >
-      <PartialBanner title="Student Dashboard" />
+      <PartialBanner title={(props.user.role.toUpperCase()+" Dashboard")} />
       <div className="p-5">
-        <h1 className="text-5xl">Welcome back {props.user.name}!</h1>
+        <h1 className="text-5xl">Welcome back {props.user.name}!</h1><br></br><br></br>
+        <Button
+          href="/programs"
+          backgroundColor="bg-blue-500"
+          textColor="text-white text-xl"
+        >
+          Sign Up Now!{" "}
+          <ArrowRightIcon className="h-4 w-4 inline-block transform -rotate-45" />
+        </Button>
         <div className="mt-10">
           {queries.map(({ isSuccess, data }, index) => {
             return (
               isSuccess && (
-                <div
+                <Link
+                  href={`/classes/${props.user.classes[index]}`}
                   key={props.user.classes[index]}
-                  className=
-                    "block p-4 max-w-[12rem] bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
                 >
-                  <Link href={`/classes/${props.user.classes[index]}`}>
-                    <h5
-                      className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white w-max hover:underline cursor-pointer"
-                    >
+                  <a className="block p-4 max-w-[12rem] bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white w-max hover:underline cursor-pointer">
                       {data.name}
                     </h5>
-                  </Link>
-                  <p className="font-normal text-gray-700 dark:text-gray-400">
-                    {data.teacher}
-                  </p>
-                </div>
+                    <p className="font-normal text-gray-700 dark:text-gray-400">
+                      {data.teacher}
+                    </p>
+                  </a>
+                </Link>
               )
             );
           })}
