@@ -393,7 +393,6 @@ const people: ExtendedPerson[] = [
     },
     qualifications: ["Multiple Time Hackathon Winner"],
   },
-
   {
     name: "Rohil Gupta",
     teacherRoles: ["Biology"],
@@ -403,6 +402,16 @@ const people: ExtendedPerson[] = [
       bio: [],
     },
     image: resolveTeamImage("Rohil Gupta"),
+  },
+  {
+    name: "Ashwin Belur",
+    description:
+      "Ashwin Belur is a sophomore at Lynbrook High School who loves biology and is very interested in genetics. In his free time he likes watching his favorite sports.",
+    teacherRoles: ["Biology"],
+    curriculumRoles: {
+      bio: ["Astrobiology"],
+    },
+    image: resolveTeamImage("Ashwin Belur"),
   },
 ];
 export default people;
