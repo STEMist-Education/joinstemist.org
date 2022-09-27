@@ -37,6 +37,15 @@ export default function Dashboard(props: { user: StudentData }) {
       })
     )
   );
+  var router = useRouter()
+  try {
+    if (props.user.role==undefined) {
+      router.push('/auth/login')
+    }
+  } catch {
+
+      router.push('/auth/login')
+  }
 
   return (
     <Container
