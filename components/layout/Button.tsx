@@ -7,6 +7,7 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   backgroundColor?: string;
   textColor?: string;
   target?: string;
+
   type?: "button" | "submit" | "reset" | undefined;
 }
 

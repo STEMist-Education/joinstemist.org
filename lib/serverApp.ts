@@ -2,7 +2,13 @@ import admin from "firebase-admin";
 import { getFirestore } from "firebase-admin/firestore";
 import { App, getApp, getApps } from "firebase-admin/app";
 let app: App;
+var fa;
 
+try {
+  fa=JSON.parse(process.env.FIREBASE_ADMIN!);
+} catch {
+  fa=process.env.FIREBASE_ADMIN
+}
 app = getApps().length
   ? getApp()
   : admin.initializeApp({

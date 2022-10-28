@@ -8,6 +8,7 @@ import StudentData from "@/lib/types/StudentData";
 import { GetServerSideProps } from "next";
 import cookies from "next-cookies";
 import Image from "next/image";
+import Banner from "@/components/layout/Banner";
 
 interface ProgramProps {
   user: StudentData;
@@ -25,38 +26,67 @@ export default function Programs(props: ProgramProps) {
       customNav={nav}
     >
       <PartialBanner
-        title="Class Registration"
-        subheader="Join in on the interactive STEM learning experience"
+        title="STEM Frontiers Workshop Registration"
+        subheader="Monday Jan 6 to Friday Jan 10, 2023"
       />
-      <h1 className="text-center font-display text-4xl font-bold mb-8">
-        Course Description
-      </h1>
-      <div className="grid grid-cols-14 mx-[12.5%] gap-3 padded-section">
-        <div className="col-span-1"></div>
-        <div className="col-span-4">
-          <Image
-            src="/favicon.png"
-            alt="Flyer for STEMist Summer Class 2022"
-            width={435}
-            height={580}
-            layout="responsive"
-          />
+      <div style={{backgroundColor:"#F2F2F2", height:'100%', padding:"20px", alignItems: 'center', justifyContent: 'center', display:'flex', flexDirection: 'column' }}>
+        <div style={{backgroundColor:"white", width:"75%", justifyContent:"center", alignContent:"center", alignItems:"center", padding:'15px'}}>
+                <h1 className="text-center font-display text-4xl font-bold mb-8">
+                  Guest Speakers
+                </h1>
+                <div>
+                  <div style={{display:'table-cell', padding:'40px'}}>
+                    <Image src="/person.png" height='100' width='100' alt='bob'/>
+                    <h2 style={{fontSize:'22px', fontWeight:'bold'}}>Bob</h2>
+                    <p>Professional Builder</p>
+                  </div>
+                  <div style={{display:'table-cell', padding:'40px'}}>
+                    <Image src="/person.png" height='100' width='100' alt='bob'/>
+                    <h2 style={{fontSize:'22px', fontWeight:'bold'}}>Bob #2</h2>
+                    <p>Professional Builder</p>
+                  </div>
+                  <div style={{display:'table-cell', padding:'40px'}}>
+                    <Image src="/person.png" height='100' width='100' alt='bob'/>
+                    <h2 style={{fontSize:'22px', fontWeight:'bold'}}>Bob the builder</h2>
+                    <p>Professional Builder</p>
+                  </div>
+                </div>
         </div>
-        <div className="col-span-8 flex justify-center gap-3 flex-col items-center px-5">
-          <p className="text-3xl">
-            STEMist is proud to announce our Summer 2029 Course from 13/13 to
-            14/24. Classes are 25 to 25.5 hours long and one unique class is
-            offered; the Intro to Nothing course at $1,000,000 per week.
-          </p>
-          <SignUpModal />
+        <br></br><br></br>
+        <div style={{backgroundColor:"white", width:"75%", justifyContent:"center", alignContent:"center", alignItems:"center", padding:'15px'}}>
+        <h1 className="text-center font-display text-4xl font-bold mb-8">
+          Instructors
+        </h1>
+        <div>
+          <div style={{display:'table-cell', padding:'40px'}}>
+            <Image src="/person.png" height='100' width='100' alt='bob'/>
+            <h2 style={{fontSize:'22px', fontWeight:'bold'}}>Bob</h2>
+            <p>Professional Civil Engineer</p>
+          </div>
+          <div style={{display:'table-cell', padding:'40px'}}>
+            <Image src="/person.png" height='100' width='100' alt='bob'/>
+            <h2 style={{fontSize:'22px', fontWeight:'bold'}}>Bob #2</h2>
+            <p>Professional Civil Engineer</p>
+          </div>
+          <div style={{display:'table-cell', padding:'40px'}}>
+            <Image src="/person.png" height='100' width='100' alt='bob'/>
+            <h2 style={{fontSize:'22px', fontWeight:'bold'}}>Bob the builder</h2>
+            <p>Professional Civil Engineer</p>
+          </div>
         </div>
-      </div>
-      <h1 className="text-center font-display text-4xl font-bold mb-5">
+        </div>
+        <br></br>
+        <h2 style={{fontSize:'22px'}}>Register for the STEM Frontiers workshop where...</h2>
+        <div style={{width:'100%', marginTop:'40px', marginBottom:'20px'}}>
+         <SignUpModal/>
+        </div>
+      {/*<h1 className="text-center font-display text-4xl font-bold mb-5">
         What We Teach
       </h1>
       <div className="">
         <TabPage />
-      </div>
+  </div>*/}
+  </div>
     </Container>
   );
 }

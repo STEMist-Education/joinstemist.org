@@ -9,6 +9,8 @@ import { useRouter } from "next/router";
 import { Fragment, useEffect, useState } from "react";
 import SelectInputField from "../forms/SelectInputField";
 import Button from "./Button";
+import InputField from "../forms/InputField";
+import Link from "next/link";
 
 export default function SignUpModal() {
   const [open, setOpen] = useState(false);
@@ -23,6 +25,12 @@ export default function SignUpModal() {
   const formik = useFormik({
     initialValues: {
       className: "",
+      parentName: "",
+      parentEmail: "",
+      studentName: "",
+      studentEmail: "",
+      studentGrade: "",
+      schoolName: "",
     },
     onSubmit: async (values) => {
       const res = await fetch("/api/classadd", {
@@ -33,6 +41,12 @@ export default function SignUpModal() {
         body: JSON.stringify({
           uid: user.uid,
           class_id: values.className,
+          pn: values.parentName,
+          pe: values.parentEmail,
+          sn: values.studentName,
+          se: values.studentEmail,
+          sg: values.studentGrade,
+          schooln: values.schoolName
         }),
       });
       if (res.ok) {
@@ -42,13 +56,12 @@ export default function SignUpModal() {
   });
   return (
     <>
-      <Button
-        backgroundColor="bg-blue-500"
-        textColor="text-white text-xl"
+      <button
+        style={{backgroundColor:"#E2E2E2", padding:'15px'}}
         onClick={() => setOpen(true)}
       >
-        Sign Up Now!{" "}
-      </Button>
+        {"\> \> \> \> \> \> \> \> \> \> \> \>"} Sign Up Now!{" "} {"\< \< \< \< \< \< \< \< \< \< \< \< "}
+      </button>
       <Transition appear show={open} as={Fragment}>
         <Dialog
           as="div"
@@ -89,7 +102,7 @@ export default function SignUpModal() {
                 >
                   Sign Up
                 </Dialog.Title>
-                <div className="mt-2">
+                <div className="mt-5">
                   <form onSubmit={formik.handleSubmit}>
                     <div className="mt-1">
                       <SelectInputField
@@ -104,21 +117,59 @@ export default function SignUpModal() {
                           </option>
                         ))}
                       </SelectInputField>
+                      <br></br>
+                      <InputField
+                        labelName="Parent's Name"
+                        name="parentName"
+                        formik={formik}
+                      ></InputField><br></br>
+                      <InputField
+                        labelName="Parent's Email Adress"
+                        name="parentEmail"
+                        formik={formik}
+                      ></InputField><br></br>
+                      <InputField
+                        labelName="Student's Name"
+                        name="studentName"
+                        formik={formik}
+                      ></InputField><br></br>
+                      <InputField
+                        labelName="Student's Email Adress"
+                        name="studentEmail"
+                        formik={formik}
+                      ></InputField><br></br>
+                      <InputField
+                        labelName="School Name"
+                        name="schoolName"
+                        formik={formik}
+                      ></InputField><br></br>
+                      <InputField
+                        labelName="Student's Grade (k-12)"
+                        name="studentGrade"
+                        formik={formik}
+                      ></InputField><br></br>
+                      <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
+                      <p>Please contribute $10 upon signing up, at:</p>
+                      <Link href="https://paypal.me/joinstemist"><a style={{color:"blue"}}>Paypal Link</a></Link> <br></br> </div>
+                      <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
+                      <p>For any questions or concerns, please email us at: fakeaddress@joinstemist.org</p>
+                      </div>
                     </div>
-                    <div className="mt-1">
+                    <br></br>
+                    <div className="mt-1" style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
                       <Button
                         backgroundColor="bg-blue-500"
                         textColor="text-white text-xl"
                         type="submit"
                       >
-                        Confirm Signup (PAYMENT HERE)
+                        Confirm Signup
                       </Button>
                     </div>
                   </form>
-                </div><br></br>
-                <div className="mt-1">
+                </div>
+                <div className="mt-1" style={{float:"right"}}>
                   <Button
-                    backgroundColor="bg-blue-500"
+                    backgroundColor="bg-red-500"
                     textColor="text-white text-xl"
                     onClick={() => setOpen(false)}
                   >

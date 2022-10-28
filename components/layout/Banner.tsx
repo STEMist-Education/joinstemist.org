@@ -54,7 +54,7 @@ export default function Banner({
         ref={titleDiv}
       >
         {full && (
-          <div className="absolute h-[90%] flex sm:h-full w-full justify-center items-end sm:-mt-10 pointer-events-none select-none text-white z-30">
+          <div className="absolute h-[100%] flex sm:h-full w-full justify-center items-end sm:-mt-10 pointer-events-none select-none text-white z-30">
             <button
               className="animate-bounce pointer-events-auto select-auto"
               onClick={scrollTo(href)}
