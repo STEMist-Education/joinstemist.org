@@ -57,10 +57,10 @@ export default function SignUpModal() {
   return (
     <>
       <button
-        style={{backgroundColor:"#E2E2E2", padding:'15px'}}
+        style={{backgroundColor:"#E2E2E2", padding:'15px', width:'100%'}}
         onClick={() => setOpen(true)}
       >
-        {"\> \> \> \> \> \> \> \> \> \> \> \>"} Sign Up Now!{" "} {"\< \< \< \< \< \< \< \< \< \< \< \< "}
+        Sign Up Now!{" "}
       </button>
       <Transition appear show={open} as={Fragment}>
         <Dialog

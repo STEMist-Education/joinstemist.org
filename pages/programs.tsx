@@ -30,7 +30,7 @@ export default function Programs(props: ProgramProps) {
         subheader="Monday Jan 6 to Friday Jan 10, 2023"
       />
       <div style={{backgroundColor:"#F2F2F2", height:'100%', padding:"20px", alignItems: 'center', justifyContent: 'center', display:'flex', flexDirection: 'column' }}>
-        <div style={{backgroundColor:"white", width:"75%", justifyContent:"center", alignContent:"center", alignItems:"center", padding:'15px'}}>
+        <div style={{backgroundColor:"white", width:"75%", justifyContent:"center", alignItems:"center", padding:'15px', display:'flex', flexDirection: 'column'}}>
                 <h1 className="text-center font-display text-4xl font-bold mb-8">
                   Guest Speakers
                 </h1>
@@ -53,7 +53,7 @@ export default function Programs(props: ProgramProps) {
                 </div>
         </div>
         <br></br><br></br>
-        <div style={{backgroundColor:"white", width:"75%", justifyContent:"center", alignContent:"center", alignItems:"center", padding:'15px'}}>
+        <div style={{backgroundColor:"white", width:"75%", justifyContent:"center", alignItems:"center", padding:'15px', display:'flex', flexDirection: 'column'}}>
         <h1 className="text-center font-display text-4xl font-bold mb-8">
           Instructors
         </h1>
@@ -77,7 +77,7 @@ export default function Programs(props: ProgramProps) {
         </div>
         <br></br>
         <h2 style={{fontSize:'22px'}}>Register for the STEM Frontiers workshop where...</h2>
-        <div style={{width:'100%', marginTop:'40px', marginBottom:'20px'}}>
+        <div style={{width:'75%', marginTop:'40px', marginBottom:'20px', display:'flex', flexDirection: 'column', justifyContent:"center", alignItems:"center"}}>
          <SignUpModal/>
         </div>
       {/*<h1 className="text-center font-display text-4xl font-bold mb-5">
