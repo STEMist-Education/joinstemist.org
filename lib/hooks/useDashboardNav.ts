@@ -33,13 +33,11 @@ export function useDashboardNav(user: StudentData) {
               image: user.profileUrl,
             },
             {
-              name: "Dashboard",
-              link: "/dashboard",
+              name: "Class Dashboard",
+              link: "/classes/Winter2022",
               via: "link",
               customProps: {
-                main: true,
-                color: "blue-500 bg-opacity-80 hover:bg-opacity-90",
-                textColor: "white",
+                textColor: "#73d1e3",
               },
             },
             {
@@ -47,9 +45,7 @@ export function useDashboardNav(user: StudentData) {
               link: "/programs",
               via: "link",
               customProps: {
-                main: true,
-                color: "blue-500 bg-opacity-80 hover:bg-opacity-90",
-                textColor: "white",
+                textColor: "#73d1e3",
               },
             },
             {

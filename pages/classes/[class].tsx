@@ -37,6 +37,7 @@ export default function Class(props: { class: Class; user: StudentData }) {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const cl = ctx.params!.class as string;
   const cookie = cookies(ctx).user! as Object;
+  console.log(cl)
   if (cookie === undefined) {
     return {
       redirect: {
@@ -46,10 +47,18 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     };
   }
   const user = cookie as StudentData;
+  if (user.name === undefined) {
+    return {
+      redirect: {
+        destination: "/auth/login",
+        permanent: false,
+      },
+    };
+  }
   if (!user.classes.includes(cl)) {
     return {
       redirect: {
-        destination: "/dashboard",
+        destination: "/programs",
         permanent: false,
       },
     };

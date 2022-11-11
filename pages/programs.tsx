@@ -9,6 +9,7 @@ import { GetServerSideProps } from "next";
 import cookies from "next-cookies";
 import Image from "next/image";
 import Banner from "@/components/layout/Banner";
+import { useRouter, NextRouter } from "next/router";
 
 interface ProgramProps {
   user: StudentData;
@@ -17,6 +18,14 @@ interface ProgramProps {
 export default function Programs(props: ProgramProps) {
   const user = useData(props.user!);
   const nav = useDashboardNav(user);
+  var router = useRouter()
+  try {
+    if (props.user.role==undefined) {
+      router.push('/auth/login')
+    }
+  } catch {
+      router.push('/auth/login')
+  }
 
   return (
     <Container

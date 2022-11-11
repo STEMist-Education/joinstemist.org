@@ -109,13 +109,18 @@ export default function SignUpModal() {
                         labelName="Class"
                         name="className"
                         formik={formik}
+                        
                       >
-                        <option value="">Select a class</option>
-                        {classes.map((c) => (
+                        <option value="">Select the workshop to confirm</option>
+                        <option key={"Winter2022"} value="Winter2022">STEM Frontiers - 2023</option> {/* once workshops done, 'Winter2022' should be '' and "Stem Frontiers - 2023" should be "Select a class"*/}
+                        {/*classes.map((c) => (
                           <option key={c.uid} value={c.uid}>
                             {c.name}
                           </option>
-                        ))}
+                        ))*/}
+
+                      {/* UNCOMMENT LINE ABOVE ONCE WORKSHOPS DONE */}
+
                       </SelectInputField>
                       <br></br>
                       <InputField
@@ -149,7 +154,7 @@ export default function SignUpModal() {
                         formik={formik}
                       ></InputField><br></br>
                       <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
-                      <p>Please contribute $10 upon signing up, at:</p>
+                      <p>Please pay $10 upon signing up, at:</p>
                       <Link href="https://paypal.me/joinstemist"><a style={{color:"blue"}}>Paypal Link</a></Link> <br></br> </div>
                       <div style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
                       <p>For any questions or concerns, please email us at: fakeaddress@joinstemist.org</p>

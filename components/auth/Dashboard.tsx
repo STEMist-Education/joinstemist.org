@@ -43,7 +43,6 @@ export default function Dashboard(props: { user: StudentData }) {
       router.push('/auth/login')
     }
   } catch {
-
       router.push('/auth/login')
   }
 

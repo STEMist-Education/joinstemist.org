@@ -106,11 +106,11 @@ export const navLinks: NavLink[] = [
     via: "link",
   },
   {
-    name: "Login/Register",
-    link: "/dashboard",
+    name: "Programs",
+    link: "/programs",
     customProps: {
       main: true,
-      color: "red",
+      color: "blue",
       textColor: "white",
     },
     via: "link",
