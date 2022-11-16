@@ -16,7 +16,6 @@ export default function Curriculum({ data }: CurriculumProps) {
   const personByName = useCallback((name: string) => {
     return teachers.find((person) => person.name === name)!;
   }, []);
-  console.log(data.oneCol);
   return (
     <Container title={data.title}>
       <PartialBanner
