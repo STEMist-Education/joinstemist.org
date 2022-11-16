@@ -10,9 +10,11 @@ export type Session = {
     date: string;
     description?: string;
   }[];
+  oneCol?: boolean;
 };
 export const sessionData: Session[] = [
   {
+    oneCol: true,
     slug: "2022-summer",
     title: "2022 Summer Courses",
     classes: [

@@ -16,6 +16,7 @@ export default function Curriculum({ data }: CurriculumProps) {
   const personByName = useCallback((name: string) => {
     return teachers.find((person) => person.name === name)!;
   }, []);
+  console.log(data.oneCol);
   return (
     <Container title={data.title}>
       <PartialBanner
@@ -37,9 +38,14 @@ export default function Curriculum({ data }: CurriculumProps) {
       <h1 className="text-center font-display font-bold text-5xl mb-5">
         Class Description
       </h1>
-      <div className="grid sm:grid-cols-2 grid-cols-1 gap-3 padded-section mx-auto auto-rows-[1fr] items-start">
+      <div
+        className={`grid ${
+          data.oneCol ? "sm:grid-cols-1" : "sm:grid-cols-2 auto-rows-[1fr]"
+        } grid-cols-1 gap-3 padded-section mx-auto items-start`}
+      >
         {data.classes.map((c) => (
           <CurriculumCard
+            oneCol={data.oneCol || false}
             title={c.title}
             subtitle={c.date}
             person={
@@ -75,6 +81,7 @@ interface CurriculumCardProps {
   person: P[];
   children?: ReactNode;
   subtitle: string;
+  oneCol: boolean;
 }
 
 function CurriculumCard(props: CurriculumCardProps) {
@@ -89,7 +96,11 @@ function CurriculumCard(props: CurriculumCardProps) {
       <h1 className="font-display mt-3">Presented By</h1>
       <div
         className={`grid ${
-          props.person.length > 1 ? "grid-cols-2" : "grid-cols-1"
+          props.person.length > 1
+            ? props.oneCol
+              ? "lg:grid-cols-3"
+              : "sm:grid-cols-2"
+            : "sm:grid-cols-1"
         } text-left`}
       >
         {props.person.map((p) => (
