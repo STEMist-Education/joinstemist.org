@@ -44,7 +44,7 @@ export default function Programs(props: ProgramProps) {
 
   if (!isMobile) {
     try {
-    router.push('/programs')
+    //router.push('/programs')
     } catch {}
   }
 
