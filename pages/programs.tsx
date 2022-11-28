@@ -10,6 +10,7 @@ import cookies from "next-cookies";
 import Image from "next/image";
 import Banner from "@/components/layout/Banner";
 import { useRouter, NextRouter } from "next/router";
+import React from "react";
 
 interface ProgramProps {
   user: StudentData;
@@ -24,7 +25,26 @@ export default function Programs(props: ProgramProps) {
       router.push('/auth/login')
     }
   } catch {
-      router.push('/auth/login')
+    try{router.push('/auth/login')}catch{}
+  }
+
+  const [isMobile, setMobile] = React.useState(false);
+
+
+  React.useEffect(() => {
+    const userAgent =
+      typeof window.navigator === "undefined" ? "" : navigator.userAgent;
+    const mobile = Boolean(
+      userAgent.match(
+        /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
+      )
+    );
+    setMobile(mobile);
+  }, []);
+
+  if (isMobile) {
+    try {
+      router.push('/programs_mobile')} catch {}
   }
 
   return (

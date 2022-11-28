@@ -12,7 +12,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   if (user !== undefined) {
     return {
       redirect: {
-        destination: "/dashboard",
+        destination: "/classes/Winter2022",
         permanent: false,
       },
     };
