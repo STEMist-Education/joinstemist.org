@@ -239,6 +239,7 @@ const people: ExtendedPerson[] = [
       "Knowledgable in NodeJS and React",
       "CA Synposis Science Fair Participant",
     ],
+    email: "rohanf6219@gmail.com"
   },
   {
     name: "Sophie Mak",
