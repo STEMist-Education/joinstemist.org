@@ -413,5 +413,20 @@ const people: ExtendedPerson[] = [
     },
     image: resolveTeamImage("Ashwin Belur"),
   },
+  {
+    name: "Yash Seth",
+    teamRoles: ["Technology", "Hackathon"]
+    teacherRoles: ["Computer Science"],
+    curriculumRoles: {
+      cs: ["Javascript"],
+    },
+    image: resolveTeamImage("Yash Seth"),
+    description:
+      "A computer science enthusiast who loves to code apps and video games. Participates in hackathons and graphic design for fun",
+    qualifications: [
+      "Hackathon participant
+      "USACO member"
+    ],
+  },
 ];
 export default people;
