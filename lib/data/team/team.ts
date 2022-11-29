@@ -416,7 +416,7 @@ const people: ExtendedPerson[] = [
   },
   {
     name: "Yash Seth",
-    teamRoles: ["Technology", "Hackathon"]
+    teamRoles: ["Technology", "Hackathon"],
     teacherRoles: ["Computer Science"],
     curriculumRoles: {
       cs: ["Javascript"],
@@ -425,7 +425,7 @@ const people: ExtendedPerson[] = [
     description:
       "A computer science enthusiast who loves to code apps and video games. Participates in hackathons and graphic design for fun",
     qualifications: [
-      "Hackathon participant
+      "Hackathon participant",
       "USACO member"
     ],
   },
