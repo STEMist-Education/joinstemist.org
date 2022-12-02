@@ -29,7 +29,7 @@ export default function Hero() {
         <HomeCounter
           number={20}
           symbol="+"
-          text="Countries internationally"
+          text="Countries impacted"
         />
         <HomeCounter
           number={1.5}

@@ -1,4 +1,5 @@
 import Banner from "@/components/layout/Banner";
+import BottomBanner from "@/components/layout/BottomBanner";
 import Button from "@/components/layout/Button";
 
 const HACKATHON_INFO = {
