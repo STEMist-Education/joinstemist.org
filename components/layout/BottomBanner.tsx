@@ -40,7 +40,7 @@ export default function() {
             <div className=" 
                     fixed 
                     top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2
-                    bg-slate-50 drop-shadow-xl rounded-xl p-10 z-50 rounded">
+                    bg-slate-50 drop-shadow-xl rounded-xl p-10 z-50 rounded min-w-[90%] sm:min-w-[30%] scale-[0.7] sm:scale-90">
                 <div className="translate-x-full translate-y-[-2rem]">
                     <button type="button" className="left-1/2 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal"
                         onClick={() => {
@@ -90,7 +90,7 @@ export default function() {
                     </label>
                     <select className="mb-5 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="grid-state">
                         {
-                            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(value => {
+                            [3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(value => {
                                 return <option>{value}</option>
                             })
                         }
