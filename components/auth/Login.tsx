@@ -37,7 +37,7 @@ export default function Login() {
 
   useEffect(() => {
     if (user !== null && user.name !== "") {
-      router.push("/dashboard");
+      router.push("/programs");
     }
   }, [user, router]);
 

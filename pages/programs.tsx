@@ -66,13 +66,13 @@ export default function Programs(props: ProgramProps) {
                 <div>
                   <div style={{display:'table-cell', padding:'40px'}}>
                     <Image src="/person.png" height='100' width='100' alt='bob'/>
-                    <h2 style={{fontSize:'22px', fontWeight:'bold'}}>Bob</h2>
-                    <p>Professional Builder</p>
+                    <h2 style={{fontSize:'22px', fontWeight:'bold'}}>Steve Yang - Polymer Chemistry</h2>
+                    <p>Science Bowl, Science Olympiad</p>
                   </div>
                   <div style={{display:'table-cell', padding:'40px'}}>
                     <Image src="/person.png" height='100' width='100' alt='bob'/>
                     <h2 style={{fontSize:'22px', fontWeight:'bold'}}>Bob #2</h2>
-                    <p>Professional Builder</p>
+                    <p>PhD, University of Oregon</p>
                   </div>
                   <div style={{display:'table-cell', padding:'40px'}}>
                     <Image src="/person.png" height='100' width='100' alt='bob'/>

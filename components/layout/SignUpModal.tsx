@@ -57,8 +57,9 @@ export default function SignUpModal() {
   return (
     <>
       <button
-        style={{backgroundColor:"#E2E2E2", padding:'15px', width:'100%'}}
+        style={{padding:'15px', width:'100%', borderRadius:'30%'}}
         onClick={() => setOpen(true)}
+        className='bg-gradient-to-r from-steve-red to-steve-purple'
       >
         Sign Up Now!{" "}
       </button>

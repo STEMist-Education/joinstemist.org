@@ -11,6 +11,7 @@ import Image from "next/image";
 import Banner from "@/components/layout/Banner";
 import { useRouter, NextRouter } from "next/router";
 import React from "react";
+import BottomBanner from "@/components/layout/BottomBanner";
 
 interface ProgramProps {
   user: StudentData;
@@ -133,7 +134,7 @@ export default function Programs(props: ProgramProps) {
             <div>
               <div>
                   <div style={{display:'table-cell', paddingTop:'20px', width:'100px'}}>
-                    <Image src="/person.png" height='150' width='150' alt='Steve Yang'/>
+                    <Image src="/team/Steve Yang.png" height='150' width='150' alt='Steve Yang' style={{borderRadius:'50%'}}/>
                   </div>
                   <div style={{display:'table-cell', paddingTop:'40px'}}>
                   <h2 style={{fontSize:'18px', fontWeight:'bold'}}>Polymer Chem</h2>
@@ -146,11 +147,11 @@ export default function Programs(props: ProgramProps) {
             <div>
               <div>
                   <div style={{display:'table-cell', paddingTop:'20px', width:'100px'}}>
-                    <Image src="/person.png" height='100' width='100' alt='John Dalton'/>
+                    <Image src="/GSP/pd.jpg" height='100' width='100' alt='John Dalton' style={{borderRadius:'50%'}}/>
                   </div>
                   <div style={{display:'table-cell', paddingTop:'40px'}}>
                   <h2 style={{fontSize:'18px', fontWeight:'bold'}}>3D Printing</h2>
-                    <h2 style={{fontSize:'14px'}}>John Dalton, PhD</h2>
+                    <h2 style={{fontSize:'14px'}}>Paul Dalton, PhD</h2>
                     <p style={{fontSize:'10px'}}>University of Oregon</p>
                   </div>
               </div>
@@ -161,7 +162,7 @@ export default function Programs(props: ProgramProps) {
             <div>
               <div>
                   <div style={{display:'table-cell', paddingTop:'20px', width:'100px'}}>
-                    <Image src="/person.png" height='150' width='150' alt='Kandis Abdul-Aziz'/>
+                    <Image src="/GSP/laa.jpg" height='150' width='150' alt='Kandis Abdul-Aziz' style={{borderRadius:'50%'}}/>
                   </div>
                   <div style={{display:'table-cell', paddingTop:'40px'}}>
                   <h2 style={{fontSize:'18px', fontWeight:'bold'}}>Climate Engineering</h2>
@@ -174,7 +175,7 @@ export default function Programs(props: ProgramProps) {
             <div>
               <div>
                   <div style={{display:'table-cell', paddingTop:'20px', width:'100px'}}>
-                    <Image src="/person.png" height='100' width='100' alt='Snehil Kakani'/>
+                    <Image src="/team/Snehil Kakani.jpg" height='100' width='100' alt='Snehil Kakani' style={{borderRadius:'50%'}}/>
                   </div>
                   <div style={{display:'table-cell', paddingTop:'40px'}}>
                   <h2 style={{fontSize:'18px', fontWeight:'bold'}}>JS Frameworks</h2>
@@ -189,10 +190,10 @@ export default function Programs(props: ProgramProps) {
             <div>
               <div>
                   <div style={{display:'table-cell', paddingTop:'20px', width:'100px'}}>
-                    <Image src="/person.png" height='150' width='150' alt='Melanie Cocco'/>
+                    <Image src="/GSP/mc.jpg" height='150' width='150' alt='Melanie Cocco' style={{borderRadius:'50%'}}/>
                   </div>
                   <div style={{display:'table-cell', paddingTop:'40px'}}>
-                  <h2 style={{fontSize:'18px', fontWeight:'bold'}}>[Insert Topic]</h2>
+                  <h2 style={{fontSize:'18px', fontWeight:'bold'}}>Treating Sickle Cell Anemia</h2>
                     <h2 style={{fontSize:'14px'}}>Melanie Cocco, PhD</h2>
                     <p style={{fontSize:'10px'}}>UC Irvine</p>
                   </div>
@@ -202,7 +203,7 @@ export default function Programs(props: ProgramProps) {
             <div>
               <div>
                   <div style={{display:'table-cell', paddingTop:'20px', width:'100px'}}>
-                    <Image src="/person.png" height='100' width='100' alt='Selena Yang'/>
+                    <Image src="/team/Selena Yang.jpg" height='100' width='100' alt='Selena Yang' style={{borderRadius:'50%'}}/>
                   </div>
                   <div style={{display:'table-cell', paddingTop:'40px'}}>
                   <h2 style={{fontSize:'18px', fontWeight:'bold'}}>Neurosignaling</h2>
@@ -217,7 +218,7 @@ export default function Programs(props: ProgramProps) {
             <div>
               <div>
                   <div style={{display:'table-cell', paddingTop:'20px', width:'100px'}}>
-                    <Image src="/person.png" height='150' width='150' alt='Spencer Chang'/>
+                    <Image src="/GSP/sc.jpg" height='150' width='150' alt='Spencer Chang' style={{borderRadius:'50%'}}/>
                   </div>
                   <div style={{display:'table-cell', paddingTop:'40px'}}>
                   <h2 style={{fontSize:'18px', fontWeight:'bold'}}>Our Expanding Universe</h2>
@@ -230,7 +231,7 @@ export default function Programs(props: ProgramProps) {
             <div>
               <div>
                   <div style={{display:'table-cell', paddingTop:'20px', width:'100px'}}>
-                    <Image src="/person.png" height='100' width='100' alt='Abhiram Manuguri'/>
+                    <Image src="/team/Abhiram Manuguri.jpg" height='100' width='100' alt='Abhiram Manuguri' style={{borderRadius:'50%'}}/>
                   </div>
                   <div style={{display:'table-cell', paddingTop:'40px'}}>
                   <h2 style={{fontSize:'18px', fontWeight:'bold'}}>Astrobiology</h2>
@@ -245,7 +246,7 @@ export default function Programs(props: ProgramProps) {
             <div>
               <div>
                   <div style={{display:'table-cell', paddingTop:'20px', width:'100px'}}>
-                    <Image src="/person.png" height='150' width='150' alt='Benjamin Morehouse'/>
+                    <Image src="/GSP/bm.jpg" height='100' width='100' alt='Benjamin Morehouse' style={{borderRadius:'50%'}}/>
                   </div>
                   <div style={{display:'table-cell', paddingTop:'40px'}}>
                   <h2 style={{fontSize:'18px', fontWeight:'bold'}}>Terpene Chemical Signals</h2>
@@ -258,7 +259,7 @@ export default function Programs(props: ProgramProps) {
             <div>
               <div>
                   <div style={{display:'table-cell', paddingTop:'20px', width:'100px'}}>
-                    <Image src="/person.png" height='100' width='100' alt='Vyaas Baskar'/>
+                    <Image src="/team/Vyaas Baskar.jpg" height='100' width='100' alt='Vyaas Baskar' style={{borderRadius:'50%'}}/>
                   </div>
                   <div style={{display:'table-cell', paddingTop:'40px'}}>
                   <h2 style={{fontSize:'18px', fontWeight:'bold'}}>Hydrogen Energy</h2>
@@ -281,6 +282,7 @@ export default function Programs(props: ProgramProps) {
       <div className="">
         <TabPage />
   </div>*/}
+  <BottomBanner/>
   </div>
     </Container>
   );
