@@ -50,14 +50,14 @@ export default function SignUpModal() {
         }),
       });
       if (res.ok) {
-        router.push("/classes/" + values.className);
+        //router.push("/classes/" + values.className);
       }
     },
   });
   return (
     <>
       <button
-        style={{padding:'15px', width:'100%', borderRadius:'30%'}}
+        style={{padding:'15px', width:'100%'}}
         onClick={() => setOpen(true)}
         className='bg-gradient-to-r from-steve-red to-steve-purple'
       >

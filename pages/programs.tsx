@@ -22,10 +22,10 @@ export default function Programs(props: ProgramProps) {
   var router = useRouter()
   try {
     if (props.user.role==undefined) {
-      router.push('/auth/login')
+      //router.push('/auth/login')
     }
   } catch {
-    try{router.push('/auth/login')}catch{}
+    //try{router.push('/auth/login')}catch{}
   }
 
   const [isMobile, setMobile] = React.useState(false);
