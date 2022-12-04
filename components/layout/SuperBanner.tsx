@@ -17,7 +17,7 @@ export default function PartialBanner({
   return (
     <Banner image="/homepage.jpg" banner={banner}>
       <div className={`${children ? "py-6" : ""}`}>
-      <style jsx>{`
+      <style>{`
         h1 {
           font-size: 32px;
           color: #9933ff;
