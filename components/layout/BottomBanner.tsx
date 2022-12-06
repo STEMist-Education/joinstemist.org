@@ -17,7 +17,7 @@ import SignUpModal from "./SignUpModal";
  */
 export default function BottomBanner() {
     const [isMobile, setMobile] = React.useState(false);
-    const [modalState, setModalState] = React.useState<true | false>(false)
+    const [modalState, setModalState] = React.useState<boolean>(false)
 
     React.useEffect(() => {
         const userAgent =
@@ -30,16 +30,16 @@ export default function BottomBanner() {
         setMobile(mobile);
 
         if (isMobile) setModalState(true)
-        else setModalState(false)
+        else setModalState(true)
     }, []);
     
     return (
         (modalState && <div className="fixed bottom-0 left-0 bg-slate-50 w-screen h-30 z-40 shadow-inner" style={{backgroundColor:'#188bb6', padding:'10px'}}> 
-            <p className="text-2xl font-bold text-center text-[#2e2e2e]" style={{padding:'5px'}}>Upcoming STEM Workshop!</p>
+            <p className="text-2xl font-bold text-center text-[#2e2e2e]" style={{padding:'5px'}}>Register</p>
             <div className="flex justify-center items-center">
                 <SignUpModal/>
             </div>
-        </div>)
+        </div> || <div/>)
     ) /* || <div className="modal bg-purple-600 shadow-inner">
             <div className=" 
                     fixed 
