@@ -24,7 +24,7 @@ export default function BottomBanner() {
         typeof window.navigator === "undefined" ? "" : navigator.userAgent;
         const mobile = Boolean(
         userAgent.match(
-            /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
+            /Android|BlackBerry|iPhone|iPad|iPod/i
         )
         );
         setMobile(mobile);
@@ -35,7 +35,7 @@ export default function BottomBanner() {
     
     return (
         (modalState && <div className="fixed bottom-0 left-0 bg-slate-50 w-screen h-30 z-40 shadow-inner" style={{backgroundImage:`url("homepage.png")`, padding:'10px'}}> 
-            <p className="text-2xl font-bold text-center text-[#2e2e2e]" style={{padding:'5px'}}>Register</p>
+            <p className="text-2xl font-bold text-center text-[#ff]" style={{padding:'5px'}}>Register</p>
             <div className="flex justify-center items-center">
                 <SignUpModal/>
             </div>
