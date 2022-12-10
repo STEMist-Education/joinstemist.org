@@ -17,25 +17,14 @@ import SignUpModal from "./SignUpModal";
  */
 export default function BottomBanner() {
     const [isMobile, setMobile] = React.useState(false);
-    const [modalState, setModalState] = React.useState<boolean>(false)
 
     React.useEffect(() => {
-        const userAgent =
-        typeof window.navigator === "undefined" ? "" : navigator.userAgent;
-        const mobile = Boolean(
-        userAgent.match(
-            /Android|BlackBerry|iPhone|iPad|iPod/i
-        )
-        );
-        setMobile(mobile);
-
-        if (isMobile) setModalState(true)
-        else setModalState(true)
+        setMobile(window.matchMedia("(max-width:  600px)").matches);
     }, []);
     
     return (
-        (modalState && <div className="fixed bottom-0 left-0 bg-slate-50 w-screen h-30 z-40 shadow-inner" style={{backgroundImage:`url("homepage.png")`, padding:'10px'}}> 
-            <p className="text-2xl font-bold text-center text-[#ff]" style={{padding:'5px'}}>Register</p>
+        (isMobile && <div className="fixed bottom-0 left-0 bg-slate-50 w-screen h-30 z-40 shadow-inner" style={{backgroundImage:`url("homepage.png")`, padding:'10px'}}> 
+            <p className="text-2xl font-bold text-center text-[#fff]" style={{padding:'5px'}}>Register</p>
             <div className="flex justify-center items-center">
                 <SignUpModal/>
             </div>
