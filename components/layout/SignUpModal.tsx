@@ -62,7 +62,7 @@ export default function SignUpModal() {
                 </Dialog.Title>
                 
                 <iframe width="560" height="560" 
-                src="https://docs.google.com/forms/d/e/1FAIpQLScaPtVaU84sCDbn7NkKo1MK8Y-3EzlScCpb4Q-pixKBIj0LnQ/closedform"></iframe>
+                src="https://docs.google.com/forms/d/e/1FAIpQLSe3dlXHXSKfcLTDP01pqLh9X8PVf4lTvMVQjyTzxfTkFlWvFg/viewform"></iframe>
 
                 <div className="mt-1" style={{float:"right"}}>
                   <Button
