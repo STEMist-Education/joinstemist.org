@@ -1,6 +1,7 @@
 import Button from "@/components/layout/Button";
 import Container from "@/components/layout/Container";
 import PartialBanner from "@/components/layout/PartialBanner";
+import SignUpModal from "@/components/layout/SignUpModal";
 import TabPage from "@/components/pages/TabPage";
 import { ArrowRightIcon } from "@heroicons/react/outline";
 import Image from "next/image";
@@ -30,7 +31,7 @@ export default function Programs() {
             STEMist is proud to announce our Winter 2023 one-week course, featuring five guest speakers from nearby universities. Sessions are from Monday 1/2 to
             Friday 1/6 and are 1 to 1.5 hours long. The workshop talks about the newest developments in the fields of science and Engineering, including: Climate Engineering, Hydrogen Energy, Neurosignaling, 3d Printing, and much more.
           </p>
-          <Button
+          {/*<Button
             href="/signup"
             backgroundColor="bg-blue-500"
             textColor="text-white text-xl"
@@ -38,7 +39,8 @@ export default function Programs() {
           >
             Sign Up Now!{" "}
             <ArrowRightIcon className="h-4 w-4 inline-block transform -rotate-45" />
-          </Button>
+  </Button> */}
+          <SignUpModal/>
         </div>
       </div>
       {/*<h1 className="text-center font-display text-4xl font-bold mb-5">
