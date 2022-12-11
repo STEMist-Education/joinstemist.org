@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "@/components/layout/Button";
 import { useEffect } from "react";
+import Link from "next/link";
 
 
 export default function BottomBanner() {
@@ -16,13 +17,14 @@ export default function BottomBanner() {
             <div className="fixed bottom-0 left-0 bg-slate-50 w-screen h-30 z-40 shadow-inner" style={{backgroundImage:`url("homepage.png")`, padding:10}}> 
                 <p className="text-2xl font-bold text-center text-[#fff]">STEM Frontiers Workshop!</p>
                 <div className="flex  justify-center items-center">
-                    <Button
+                    {/*<Button
                         backgroundColor="bg-gradient-to-r from-steve-red to-steve-purple h-10 w-55"
                         textColor="text-white"
                         style={{width:"45%"}}
                     >
                         Register
-                    </Button>
+                    </Button>*/}
+                    <Link href="/programs" className="bg-gradient-to-r from-steve-red to-steve-purple h-10 w-55" style={{color:"white", width:"45%"}}>Sign up</Link>
                 </div>
             </div>
         )
