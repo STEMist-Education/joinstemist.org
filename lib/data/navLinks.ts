@@ -102,16 +102,16 @@ export const navLinks: NavLink[] = [
     },
     class: "projects",
   },
-  // {
-  //   name: "Class Registration",
-  //   link: "/programs",
-  //   class: "projects",
-  //   customProps: {
-  //     main: true,
-  //     color: "transparent",
-  //     textColor: "white",
-  //   },
-  // },
+   {
+     name: "STEM Frontiers Workshop!",
+     link: "/programs",
+     class: "projects",
+     customProps: {
+       main: true,
+       color: "#0099cc",
+       textColor: "white",
+     },
+   },
 ];
 
 export const hackathonNavLinks: NavLink[] = [

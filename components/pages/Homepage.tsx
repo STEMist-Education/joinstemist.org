@@ -58,10 +58,7 @@ export default function Homepage() {
         position="top center"
         subtitle="Reshaping the learning curve"
       >
-        Our Summer 2022 STEM Course provides an intensive 5-week course that
-        accelerates the internalization of concepts taught during class.
-        Learning is reinforced with kahoots that promote note-taking and long
-        term memory recall.
+        Our upcoming one-week STEM Frontiers Workshop, taking place in January, will be about the newest developments in the fields of science. Several guest speakers from nearby universities will be joining in!
         <br></br><br></br>
         <Button
               href="/programs"

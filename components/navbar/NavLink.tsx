@@ -15,7 +15,7 @@ export default function NavLink({
   return (
     <Link href={href}>
       <a className={`${className || ""} m-auto`} target={target}>
-        <li
+        <li style={{borderRadius:15}}
           className={`font-display m-auto text-lg underline-offset-1 whitespace-nowrap ${
             main
               ? `bg-${color} py-1 px-3 hover:border-opacity-40 transition-all duration-300 text-${textColor} border-2 border-opacity-20 border-white`
