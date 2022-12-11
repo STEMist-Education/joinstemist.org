@@ -22,7 +22,7 @@ export default function BottomBanner() {
                     textColor="text-white"
                     style={{width:"45%"}}
                 >
-                
+                Sign Up!
                 </Button></Link>
                     
                 </div>
