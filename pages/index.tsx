@@ -12,7 +12,7 @@ const events = ["STEMist Hacks", "Summer Classes"];
 export default function Index() {
   return (
     <>
-      BottomBanner()
+      {BottomBanner()}
       <Container title="Home">
         <div>
           <Banner image="/homepage2.jpeg" full>
