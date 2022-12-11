@@ -13,7 +13,7 @@ export default function BottomBanner() {
         return false;
     }
     if (typeof window !== "undefined") {
-        return true && (
+        return isClientMobile() && (
             <div className="fixed bottom-0 left-0 bg-slate-50 w-screen h-30 z-40 shadow-inner" style={{backgroundImage:`url("homepage.png")`, padding:10}}> 
                 <p className="text-2xl font-bold text-center text-[#fff]">STEM Frontiers Workshop!</p>
                 <div className="flex  justify-center items-center">
