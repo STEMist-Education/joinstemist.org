@@ -1,6 +1,7 @@
 import Button from "@/components/layout/Button";
 import Container from "@/components/layout/Container";
 import PartialBanner from "@/components/layout/PartialBanner";
+import SignUpModal from "@/components/layout/SignUpModal";
 import TabPage from "@/components/pages/TabPage";
 import { ArrowRightIcon } from "@heroicons/react/outline";
 import Image from "next/image";
@@ -9,7 +10,7 @@ export default function Programs() {
   return (
     <Container title="Class Registration">
       <PartialBanner
-        title="Summer Class Registration"
+        title="STEM Frontiers Workshop Registration"
         subheader="Join in on the interactive STEM learning experience"
       />
       <h1 className="text-center font-display text-4xl font-bold mb-5">
@@ -18,7 +19,7 @@ export default function Programs() {
       <div className="grid grid-cols-8 padded-section">
         <div className="col-span-2">
           <Image
-            src="/summer-flyer.png"
+            src="/favicon.png"
             alt="Flyer for STEMist Summer Class 2022"
             width={435}
             height={580}
@@ -27,13 +28,10 @@ export default function Programs() {
         </div>
         <div className="col-span-6 flex justify-center gap-3 flex-col items-center px-5">
           <p className="text-3xl">
-            STEMist is proud to announce our Summer 2022 Course from 6/13 to
-            7/24. Classes are 1 to 1.5 hours long and four unique classes are
-            offered, including Intro to USACO and Machine Learning, AMC8 and
-            MATHCOUNTS Preparation, Intro to USABO and our Physical Science
-            course at $10 per week.
+            STEMist is proud to announce our Winter 2023 one-week course, featuring five guest speakers from nearby universities. Sessions are from Monday 1/2 to
+            Friday 1/6 and are 1 to 1.5 hours long. The workshop talks about the newest developments in the fields of science and Engineering, including: Climate Engineering, Hydrogen Energy, Neurosignaling, 3d Printing, and much more.
           </p>
-          <Button
+          {/*<Button
             href="/signup"
             backgroundColor="bg-blue-500"
             textColor="text-white text-xl"
@@ -41,15 +39,16 @@ export default function Programs() {
           >
             Sign Up Now!{" "}
             <ArrowRightIcon className="h-4 w-4 inline-block transform -rotate-45" />
-          </Button>
+  </Button> */}
+          <SignUpModal/>
         </div>
       </div>
-      <h1 className="text-center font-display text-4xl font-bold mb-5">
+      {/*<h1 className="text-center font-display text-4xl font-bold mb-5">
         What We Teach
       </h1>
       <div className="">
         <TabPage />
-      </div>
+  </div>*/}
     </Container>
   );
 }

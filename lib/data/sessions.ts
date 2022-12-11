@@ -1,3 +1,5 @@
+import { teachers } from "./team";
+
 export type Session = {
   slug: string;
   title: string;
@@ -8,8 +10,52 @@ export type Session = {
     date: string;
     description?: string;
   }[];
+  oneCol?: boolean;
 };
 export const sessionData: Session[] = [
+  {
+    oneCol: true,
+    slug: "2022-summer",
+    title: "2022 Summer Courses",
+    classes: [
+      {
+        teacher: teachers
+          .filter((t) => t.positions.includes("Computer Science"))
+          .map((t) => t.name),
+        title: "Intro to Machine Learning and USACO",
+        date: "June 13, 2022 - June 26, 2022",
+        description:
+          "STEMist's Computer Science course was designed to be highly rigorous, teaching languages Python, C++, and Javascript. Our thorough lessons didn't just teach students to memorize languages, but helped them understand the thought process and reasoning behind different syntax. After learning the fundamentals, students took a deep dive into the applications of computer science, including algorithmic thinking, which is the premise of most programming contests, like USACO. We taught topics that students have heard about, like machine learning, and creating websites with web development, both of which help students succeed in hackathons.",
+      },
+      {
+        teacher: teachers
+          .filter((t) => t.positions.includes("Biology"))
+          .map((t) => t.name),
+        title: "Intro to USABO",
+        date: "June 27, 2022 - July 3, 2022",
+        description:
+          "STEMist's Intro to USABO was designed to be a comprehensive course which not only provides an introduction to the knowledge required for science competitions (including USABO, Science Bowl and Science Olympiad), but also delves deep into various fascinating topics (like oncology and immunology). Our curriculum covered biochemistry, molecular and cell biology, genetics, botany, anatomy, evolution and ethology, and ecology, touching upon all of the subjects covered in biolympiads and high school or AP biology courses.",
+      },
+      {
+        teacher: teachers
+          .filter((t) => t.positions.includes("Physical Science"))
+          .map((t) => t.name),
+        title: "The Earth, Physics, Chemistry, Astronomy, and Earth Science",
+        date: "July 4, 2022 - July 10, 2022",
+        description:
+          "STEMist's Physical Science covered a broad range of topics in Physics, Chemistry, Earth Science, and Astronomy. Our presentations went over the basics over the topic and showed applications of the extensive material provided through the form of sample problems and explanations. Explanations included information that was easily broken down into different segments to best prepare students in the subject matter.",
+      },
+      {
+        teacher: teachers
+          .filter((t) => t.positions.includes("Math"))
+          .map((t) => t.name),
+        title: "AMC 8 and Mathcounts Prep",
+        date: "July 18, 2022 - July 24, 2022",
+        description:
+          "STEMist's AMC 8 and Mathcounts Prep dived into the fundamentals of competition math. Our curriculum was carefully designed to cover the 4 main topics that appear in math contests: Algebra, Combinatorics, Geometry, and Number Theory. Whilst in classes, students were not only taught necessary skills, but were also taught to apply these skills through challenging and rewarding problems.",
+      },
+    ],
+  },
   {
     slug: "intro-to-stem",
     title: "Intro to STEM Spring Workshop",
@@ -76,6 +122,7 @@ export const sessionData: Session[] = [
       },
     ],
   },
+
   {
     slug: "2021-winter",
     title: "2021 Winter Workshop",

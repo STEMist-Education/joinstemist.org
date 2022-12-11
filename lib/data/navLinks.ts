@@ -52,6 +52,11 @@ export const navLinks: NavLink[] = [
     class: "workshops",
     dropdownItems: [
       {
+        name: "2022 Summer Courses",
+        link: "/events/2022-summer",
+        class: "workshops",
+      },
+      {
         name: "STEMist Hacks",
         link: "/hacks",
         class: "workshops",
@@ -97,16 +102,16 @@ export const navLinks: NavLink[] = [
     },
     class: "projects",
   },
-  {
-    name: "Class Registration",
-    link: "/programs",
-    class: "projects",
-    customProps: {
-      main: true,
-      color: "transparent",
-      textColor: "white",
-    },
-  },
+   {
+     name: "STEM Frontiers Workshop!",
+     link: "/programs",
+     class: "projects",
+     customProps: {
+       main: true,
+       color: "#0099cc",
+       textColor: "white",
+     },
+   },
 ];
 
 export const hackathonNavLinks: NavLink[] = [

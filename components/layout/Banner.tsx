@@ -4,6 +4,7 @@ import { Transition } from "@headlessui/react";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import { Fragment, ReactNode, useRef } from "react";
+import BottomBanner from "./BottomBanner";
 import CTABanner from "./CTABanner";
 
 export default function Banner({
