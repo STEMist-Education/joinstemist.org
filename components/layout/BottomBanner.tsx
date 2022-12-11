@@ -13,18 +13,18 @@ export default function BottomBanner() {
         return false;
     }
     if (typeof window !== "undefined") {
-        return isClientMobile() && (
+        return true && (
             <div className="fixed bottom-0 left-0 bg-slate-50 w-screen h-30 z-40 shadow-inner" style={{backgroundImage:`url("homepage.png")`, padding:10}}> 
                 <p className="text-2xl font-bold text-center text-[#fff]">STEM Frontiers Workshop!</p>
                 <div className="flex  justify-center items-center">
-                    {/*<Button
-                        backgroundColor="bg-gradient-to-r from-steve-red to-steve-purple h-10 w-55"
-                        textColor="text-white"
-                        style={{width:"45%"}}
-                    >
-                        Register
-                    </Button>*/}
-                    <Link href="/programs" className="bg-gradient-to-r from-steve-red to-steve-purple h-10 w-55" style={{color:"white", width:"45%"}}>Sign up</Link>
+                    <Link href="/programs" style={{color:"white"}}><Button
+                    backgroundColor="bg-gradient-to-r from-steve-red to-steve-purple h-10 w-55"
+                    textColor="text-white"
+                    style={{width:"45%"}}
+                >
+                
+                </Button></Link>
+                    
                 </div>
             </div>
         )

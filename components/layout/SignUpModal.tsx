@@ -9,7 +9,7 @@ import InputField from "../forms/InputField";
 import Link from "next/link";
 
 export default function SignUpModal() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   return (
     <>
       <button
